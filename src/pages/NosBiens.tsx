@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { Search, SlidersHorizontal } from "lucide-react";
 import PropertyCard from "@/components/PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
+import { motion } from "framer-motion";
+import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 
 const NosBiens = () => {
   const [listingType, setListingType] = useState<string>("");
@@ -23,16 +26,44 @@ const NosBiens = () => {
   return (
     <>
       {/* Header */}
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="container text-center">
-          <h1 className="font-display text-4xl font-bold">Nos Biens</h1>
-          <p className="mt-2 opacity-80">Trouvez le bien idéal à Bouaké</p>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
+        <motion.div
+          className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/10"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <div className="container relative z-10 text-center">
+          <motion.h1
+            className="font-display text-4xl font-bold md:text-5xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Nos Biens Immobiliers
+          </motion.h1>
+          <motion.p
+            className="mt-3 text-lg opacity-85"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            Explorez notre catalogue de biens soigneusement sélectionnés à Bouaké
+          </motion.p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="border-b bg-muted py-6">
+      <motion.section
+        className="border-b bg-background py-6 shadow-sm"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
         <div className="container">
+          <div className="flex items-center gap-2 mb-4">
+            <SlidersHorizontal className="h-4 w-4 text-secondary" />
+            <span className="text-sm font-semibold text-foreground">Filtrer les résultats</span>
+          </div>
           <div className="flex flex-wrap items-end gap-4">
             <div className="w-full sm:w-auto">
               <label className="mb-1 block text-xs font-medium text-muted-foreground">Type d'annonce</label>
@@ -74,21 +105,32 @@ const NosBiens = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Results */}
-      <section className="py-12">
+      <section className="py-16">
         <div className="container">
           {isLoading ? (
-            <p className="text-center text-muted-foreground">Chargement...</p>
-          ) : properties && properties.length > 0 ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {properties.map((p) => (
-                <PropertyCard key={p.id} {...p} />
+              {[1,2,3].map(i => (
+                <div key={i} className="h-80 animate-pulse rounded-xl bg-muted" />
               ))}
             </div>
+          ) : properties && properties.length > 0 ? (
+            <>
+              <p className="mb-8 text-sm text-muted-foreground">{properties.length} bien(s) trouvé(s)</p>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {properties.map((p) => (
+                  <PropertyCard key={p.id} {...p} />
+                ))}
+              </div>
+            </>
           ) : (
-            <p className="text-center text-muted-foreground">Aucun bien ne correspond à vos critères.</p>
+            <div className="py-20 text-center">
+              <Search className="mx-auto h-12 w-12 text-muted-foreground/50" />
+              <p className="mt-4 text-lg text-muted-foreground">Aucun bien ne correspond à vos critères.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Essayez de modifier vos filtres.</p>
+            </div>
           )}
         </div>
       </section>
