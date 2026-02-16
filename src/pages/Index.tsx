@@ -132,7 +132,7 @@ const Index = () => {
           </motion.p>
 
           <motion.div
-            className="mt-12 flex flex-wrap justify-center gap-4"
+            className="mt-8 mb-28 flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
