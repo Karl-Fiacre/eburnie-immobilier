@@ -197,7 +197,7 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <AnimatedSection className="py-28">
+      <AnimatedSection className="py-28 bg-white/80 backdrop-blur-sm">
         <div className="container">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Ce que nous offrons</p>
@@ -234,7 +234,7 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Recent properties */}
-      <AnimatedSection className="relative py-28 overflow-hidden">
+      <AnimatedSection className="relative py-28 overflow-hidden bg-white/80 backdrop-blur-sm">
         <div className="absolute inset-0 bg-gradient-to-b from-muted/60 via-muted/30 to-background" />
         <div className="container relative">
           <AnimatedItem>
@@ -325,7 +325,7 @@ const Index = () => {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection className="py-28">
+      <AnimatedSection className="py-28 bg-white/80 backdrop-blur-sm">
         <div className="container">
           <AnimatedItem>
             <motion.div
