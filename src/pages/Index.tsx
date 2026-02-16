@@ -441,9 +441,9 @@ const Index = () => {
                   <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 shadow-xl text-base">
                     <Link to="/contact">Demander une visite</Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 text-base">
-                    <Link to="/confier-bien">Confier mon bien</Link>
-                  </Button>
+                   <Button size="lg" variant="outline" asChild className="border-primary/40 text-primary hover:bg-primary/10 text-base">
+                     <Link to="/confier-bien">Confier mon bien</Link>
+                   </Button>
                 </div>
               </div>
             </motion.div>
