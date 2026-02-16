@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, ClipboardList, Handshake, TrendingUp, ShieldCheck, Users, Eye, Network, Building, ArrowRight, Star } from "lucide-react";
+import { Home, ClipboardList, Handshake, TrendingUp, ShieldCheck, Users, Eye, Network, Building, ArrowRight, Star, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PropertyCard from "@/components/PropertyCard";
@@ -293,34 +293,118 @@ const Index = () => {
         </div>
       </AnimatedSection>
 
-      {/* Testimonial */}
-      <AnimatedSection className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--accent)/0.1),transparent_50%)]" />
-        <ParallaxLayer speed={-0.1} className="absolute inset-0 pointer-events-none">
-          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-primary-foreground/5" />
-          <div className="absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-primary-foreground/3" />
+      {/* Testimonials */}
+      <AnimatedSection className="relative py-32 overflow-hidden">
+        {/* Rich layered background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-secondary/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,hsl(var(--accent)/0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_100%,hsl(var(--secondary)/0.3),transparent_50%)]" />
+        
+        {/* Animated decorative elements */}
+        <ParallaxLayer speed={-0.12} className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute -right-32 -top-32 h-96 w-96 rounded-full border border-primary-foreground/5"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-primary-foreground/3"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute right-[15%] top-[20%] h-3 w-3 rounded-full bg-accent/40"
+            animate={{ y: [0, -20, 0], opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute left-[10%] top-[60%] h-2 w-2 rounded-full bg-accent/30"
+            animate={{ y: [0, 15, 0], opacity: [0.3, 0.8, 0.3] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          />
         </ParallaxLayer>
-        <div className="container relative text-center text-primary-foreground">
+
+        <div className="container relative">
           <AnimatedItem>
-            <div className="flex justify-center gap-1.5 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * i, type: "spring", stiffness: 200 }}
-                >
-                  <Star className="h-6 w-6 fill-accent text-accent" />
-                </motion.div>
-              ))}
-            </div>
-            <blockquote className="mx-auto max-w-3xl font-display text-3xl font-medium italic leading-relaxed md:text-4xl">
-              "DIFA-CI & Business a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de Bouaké sont remarquables."
-            </blockquote>
-            <p className="mt-8 text-sm font-medium opacity-60 tracking-wider uppercase">— Un client satisfait à Bouaké</p>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4">Témoignages</p>
+            <h2 className="text-center font-display text-4xl font-bold text-primary-foreground md:text-5xl">
+              Ce que disent nos clients
+            </h2>
           </AnimatedItem>
+
+          <div className="mt-20 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                quote: "DIFA-CI & Business a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de Bouaké sont remarquables.",
+                name: "Kouamé Ange",
+                role: "Propriétaire à Koko",
+                rating: 5,
+              },
+              {
+                quote: "Un accompagnement exceptionnel du début à la fin. L'équipe est réactive, transparente et toujours à l'écoute. Je recommande vivement !",
+                name: "Diabaté Mariam",
+                role: "Locataire à Air France",
+                rating: 5,
+              },
+              {
+                quote: "Grâce à DIFA-CI, j'ai pu confier mes biens en toute sérénité. La gestion locative est irréprochable et les rapports sont clairs.",
+                name: "Traoré Ibrahim",
+                role: "Investisseur immobilier",
+                rating: 5,
+              },
+            ].map((t, i) => (
+              <AnimatedItem key={i}>
+                <motion.div
+                  className="group relative h-full rounded-3xl border border-primary-foreground/10 bg-primary-foreground/5 p-8 backdrop-blur-md transition-all duration-500 hover:border-accent/30 hover:bg-primary-foreground/10"
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  {/* Quote icon */}
+                  <motion.div
+                    className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/20 text-accent"
+                    whileHover={{ rotate: 12, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Quote className="h-6 w-6" />
+                  </motion.div>
+
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-5">
+                    {[...Array(t.rating)].map((_, j) => (
+                      <motion.div
+                        key={j}
+                        initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.15 * i + 0.08 * j, type: "spring", stiffness: 250 }}
+                      >
+                        <Star className="h-4 w-4 fill-accent text-accent" />
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Quote text */}
+                  <p className="font-display text-lg italic leading-relaxed text-primary-foreground/90">
+                    "{t.quote}"
+                  </p>
+
+                  {/* Divider */}
+                  <motion.div
+                    className="my-6 h-px w-12 bg-accent/40 transition-all duration-500 group-hover:w-full group-hover:bg-accent/60"
+                  />
+
+                  {/* Author */}
+                  <div>
+                    <p className="font-semibold text-primary-foreground tracking-wide">{t.name}</p>
+                    <p className="mt-1 text-xs text-primary-foreground/50 uppercase tracking-widest">{t.role}</p>
+                  </div>
+
+                  {/* Corner accent */}
+                  <div className="absolute -bottom-px -right-px h-16 w-16 rounded-tl-3xl border-t border-l border-accent/0 transition-all duration-500 group-hover:border-accent/30" />
+                </motion.div>
+              </AnimatedItem>
+            ))}
+          </div>
         </div>
       </AnimatedSection>
 
