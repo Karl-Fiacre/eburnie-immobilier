@@ -45,7 +45,7 @@ const APropos = () => (
     </section>
 
     {/* Story */}
-    <AnimatedSection className="py-20">
+    <AnimatedSection className="py-20 bg-secondary/[0.04]">
       <div className="container">
         <div className="grid gap-12 items-center lg:grid-cols-2">
           <AnimatedItem>
