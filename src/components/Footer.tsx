@@ -25,9 +25,10 @@ const Footer = () => (
         >
           <h4 className="mb-4 font-display text-lg font-bold">Navigation</h4>
           <div className="flex flex-col gap-2 text-sm opacity-80">
+            <Link to="/" className="transition-opacity hover:opacity-100">Accueil</Link>
+            <Link to="/a-propos" className="transition-opacity hover:opacity-100">À propos</Link>
             <Link to="/biens" className="transition-opacity hover:opacity-100">Nos Biens</Link>
             <Link to="/confier-bien" className="transition-opacity hover:opacity-100">Confier mon bien</Link>
-            <Link to="/a-propos" className="transition-opacity hover:opacity-100">À propos</Link>
             <Link to="/contact" className="transition-opacity hover:opacity-100">Contact</Link>
           </div>
         </motion.div>
