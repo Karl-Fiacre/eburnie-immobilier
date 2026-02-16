@@ -264,7 +264,7 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Why DIFA-CI */}
-      <AnimatedSection className="py-28">
+      <AnimatedSection className="py-28 bg-white/80 backdrop-blur-sm">
         <div className="container">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence DIFA-CI</p>
