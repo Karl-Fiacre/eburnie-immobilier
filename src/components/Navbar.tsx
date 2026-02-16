@@ -7,9 +7,9 @@ import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Accueil" },
+  { to: "/a-propos", label: "À propos" },
   { to: "/biens", label: "Nos Biens" },
   { to: "/confier-bien", label: "Confier mon bien" },
-  { to: "/a-propos", label: "À propos" },
   { to: "/contact", label: "Contact" },
 ];
 
