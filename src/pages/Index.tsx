@@ -142,7 +142,7 @@ const Index = () => {
                 Voir les biens <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-md text-base">
+            <Button size="lg" variant="outline" asChild className="border-primary/40 text-primary hover:bg-primary/10 backdrop-blur-md text-base">
               <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
             </Button>
           </motion.div>
