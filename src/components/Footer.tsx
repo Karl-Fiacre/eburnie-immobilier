@@ -53,7 +53,9 @@ const Footer = () => (
         >
           <h4 className="mb-4 font-display text-lg font-bold">Contact</h4>
           <div className="flex flex-col gap-3 text-sm opacity-80">
-            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 00 00 00 00 00</span>
+            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 27 31 61 44 78</span>
+            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 07 87 42 11 19</span>
+            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 05 04 42 47 48</span>
             <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@difa-ci.com</span>
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> AK Centre Commercial, Bouaké</span>
           </div>
