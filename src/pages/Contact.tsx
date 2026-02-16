@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 
 const contactInfo = [
   { icon: Phone, label: "Téléphone", value: "+225 00 00 00 00 00", href: "tel:+22500000000" },
@@ -46,6 +47,35 @@ const Contact = () => {
 
   return (
     <>
+      <SEOHead
+        title="Contactez-nous"
+        description="Contactez DIFA-CI & Business à Bouaké par téléphone, email ou WhatsApp. Notre équipe est disponible du lundi au samedi pour répondre à vos questions immobilières."
+        canonical="/contact"
+        keywords="contact DIFA-CI Bouaké, agence immobilière contact, téléphone immobilier Bouaké, WhatsApp DIFA-CI"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contactez DIFA-CI & Business",
+          "mainEntity": {
+            "@type": "RealEstateAgent",
+            "name": "DIFA-CI & Business",
+            "telephone": ["+22527316144 78", "+2250787421119"],
+            "email": "contact@difa-ci.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "AK Centre Commercial",
+              "addressLocality": "Bouaké",
+              "addressCountry": "CI"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          }
+        }}
+      />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
         <div className="container relative z-10 text-center">

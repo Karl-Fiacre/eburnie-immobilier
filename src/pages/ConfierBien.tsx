@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import { Home, ShieldCheck, TrendingUp, Users, Send } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const advantages = [
   { icon: ShieldCheck, title: "Gestion sécurisée", desc: "Vos biens sont entre de bonnes mains. Nous gérons tout avec rigueur et professionnalisme." },
@@ -48,6 +49,12 @@ const ConfierBien = () => {
 
   return (
     <>
+      <SEOHead
+        title="Confier mon bien"
+        description="Confiez la gestion de votre bien immobilier à DIFA-CI & Business à Bouaké. Gestion locative, recherche de locataires et suivi technique professionnels."
+        canonical="/confier-bien"
+        keywords="gestion locative Bouaké, confier bien immobilier, gérer propriété Côte d'Ivoire, rendement locatif Bouaké"
+      />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
         <div className="container relative z-10 text-center">

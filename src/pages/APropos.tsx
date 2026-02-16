@@ -1,6 +1,7 @@
 import { ShieldCheck, Eye, Users, Building, Target, Heart, Award, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 
 const values = [
   { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bouaké en offrant des services d'excellence accessibles à tous les budgets." },
@@ -18,6 +19,24 @@ const milestones = [
 
 const APropos = () => (
   <>
+    <SEOHead
+      title="À propos"
+      description="Découvrez DIFA-CI & Business, agence immobilière à Bouaké depuis 2019. Notre mission, nos valeurs et notre expertise du marché immobilier en Côte d'Ivoire."
+      canonical="/a-propos"
+      keywords="à propos DIFA-CI, agence immobilière Bouaké, histoire DIFA-CI, valeurs immobilier Côte d'Ivoire"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "À propos de DIFA-CI & Business",
+        "description": "Agence immobilière fondée en 2019 à Bouaké, Côte d'Ivoire.",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "DIFA-CI & Business",
+          "foundingDate": "2019",
+          "foundingLocation": "Bouaké, Côte d'Ivoire"
+        }
+      }}
+    />
     {/* Header */}
     <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
       <motion.div

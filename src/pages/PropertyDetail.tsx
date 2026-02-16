@@ -10,6 +10,7 @@ import { useProperty } from "@/hooks/useProperties";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
+import SEOHead from "@/components/SEOHead";
 
 const PropertyDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -59,6 +60,32 @@ const PropertyDetail = () => {
 
   return (
     <>
+      <SEOHead
+        title={`${property.title} - ${property.listing_type === "location" ? "Location" : "Vente"} à ${property.quartier}`}
+        description={`${property.property_type} ${property.listing_type === "location" ? "à louer" : "à vendre"} à ${property.quartier}, Bouaké. ${property.price.toLocaleString("fr-FR")} FCFA${property.listing_type === "location" ? "/mois" : ""}. ${property.surface ? property.surface + " m²" : ""} ${property.chambres ? property.chambres + " chambres" : ""}`.trim()}
+        canonical={`/biens/${property.id}`}
+        keywords={`${property.property_type} ${property.quartier} Bouaké, ${property.listing_type} ${property.property_type}, immobilier ${property.quartier}`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "RealEstateListing",
+          "name": property.title,
+          "description": property.description || `${property.property_type} disponible à ${property.quartier}`,
+          "url": `https://difa-ci.com/biens/${property.id}`,
+          "image": images[0] !== "/placeholder.svg" ? images[0] : undefined,
+          "offers": {
+            "@type": "Offer",
+            "price": property.price,
+            "priceCurrency": "XOF",
+            "availability": property.status === "disponible" ? "https://schema.org/InStock" : "https://schema.org/SoldOut"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": property.quartier,
+            "addressRegion": "Bouaké",
+            "addressCountry": "CI"
+          }
+        }}
+      />
       <motion.div
         className="container py-6"
         initial={{ opacity: 0 }}

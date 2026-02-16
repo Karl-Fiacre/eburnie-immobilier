@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className="border-t bg-primary text-primary-foreground">
+  <footer className="border-t bg-primary text-primary-foreground" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
     <div className="container py-12">
       <div className="grid gap-8 md:grid-cols-4">
         <motion.div
@@ -12,7 +12,7 @@ const Footer = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <img src={logo} alt="DIFA-CI" className="mb-4 h-20 w-auto" />
+          <img src={logo} alt="DIFA-CI & Business - Agence immobilière à Bouaké" className="mb-4 h-20 w-auto" />
           <p className="text-sm opacity-80">
             Votre partenaire immobilier de confiance à Bouaké. Location, gestion et commercialisation de biens immobiliers.
           </p>

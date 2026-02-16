@@ -7,6 +7,7 @@ import PropertyCard from "@/components/PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 
 const NosBiens = () => {
   const [listingType, setListingType] = useState<string>("");
@@ -25,6 +26,19 @@ const NosBiens = () => {
 
   return (
     <>
+      <SEOHead
+        title="Nos Biens Immobiliers à Bouaké"
+        description="Explorez notre catalogue de maisons, appartements, terrains et bureaux à louer ou à vendre à Bouaké. Biens sélectionnés avec soin par DIFA-CI & Business."
+        canonical="/biens"
+        keywords="location maison Bouaké, appartement à louer Bouaké, terrain à vendre Bouaké, bureau Bouaké, immobilier Côte d'Ivoire"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Biens immobiliers à Bouaké",
+          "description": "Catalogue de biens immobiliers disponibles à la location et à la vente à Bouaké.",
+          "provider": { "@type": "RealEstateAgent", "name": "DIFA-CI & Business" }
+        }}
+      />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
         <motion.div

@@ -7,6 +7,7 @@ import { useProperties } from "@/hooks/useProperties";
 import { AnimatedSection, AnimatedItem, CountUp, ParallaxLayer } from "@/components/AnimatedSection";
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import SEOHead from "@/components/SEOHead";
 
 const services = [
   { icon: Home, title: "Location", desc: "Trouvez la maison ou l'appartement idéal dans les quartiers prisés de Bouaké. Nous sélectionnons pour vous des biens de qualité." },
@@ -38,6 +39,34 @@ const Index = () => {
 
   return (
     <>
+      <SEOHead
+        title="Agence Immobilière à Bouaké"
+        description="DIFA-CI & Business, votre agence immobilière de confiance à Bouaké. Location, vente, gestion locative de maisons, appartements et terrains en Côte d'Ivoire."
+        canonical="/"
+        keywords="immobilier Bouaké, location maison Bouaké, agence immobilière Côte d'Ivoire, vente terrain Bouaké, gestion locative Bouaké, appartement Bouaké"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "RealEstateAgent",
+          "name": "DIFA-CI & Business",
+          "description": "Agence immobilière de confiance à Bouaké spécialisée dans la location, vente et gestion de biens immobiliers.",
+          "url": "https://difa-ci.com",
+          "telephone": ["+22527316144 78", "+2250787421119"],
+          "email": "contact@difa-ci.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "AK Centre Commercial",
+            "addressLocality": "Bouaké",
+            "addressCountry": "CI"
+          },
+          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "priceRange": "$$",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500"
+          }
+        }}
+      />
       {/* Hero */}
       <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden">
         <motion.img
