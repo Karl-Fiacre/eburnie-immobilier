@@ -104,7 +104,7 @@ const Contact = () => {
               <AnimatedItem className="mt-8">
                 <div className="flex gap-3">
                   <Button asChild className="bg-secondary hover:bg-secondary/90">
-                    <a href="https://wa.me/22500000000" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
                     </a>
                   </Button>
