@@ -29,6 +29,7 @@ const Footer = () => (
             <Link to="/a-propos" className="transition-opacity hover:opacity-100">À propos</Link>
             <Link to="/biens" className="transition-opacity hover:opacity-100">Nos Biens</Link>
             <Link to="/confier-bien" className="transition-opacity hover:opacity-100">Confier mon bien</Link>
+            <Link to="/devis" className="transition-opacity hover:opacity-100">Devis</Link>
             <Link to="/contact" className="transition-opacity hover:opacity-100">Contact</Link>
           </div>
         </motion.div>

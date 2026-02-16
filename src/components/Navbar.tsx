@@ -10,6 +10,7 @@ const links = [
   { to: "/a-propos", label: "À propos" },
   { to: "/biens", label: "Nos Biens" },
   { to: "/confier-bien", label: "Confier mon bien" },
+  { to: "/devis", label: "Devis" },
   { to: "/contact", label: "Contact" },
 ];
 
