@@ -70,8 +70,9 @@ const ConfierBien = () => {
       </section>
 
       {/* Advantages */}
-      <AnimatedSection className="py-20">
-        <div className="container">
+      <AnimatedSection className="relative py-20 overflow-hidden bg-gradient-to-br from-muted/50 via-background to-accent/[0.04]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,hsl(var(--secondary)/0.07),transparent_50%)]" />
+        <div className="container relative">
           <AnimatedItem>
             <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Pourquoi nous confier votre bien ?</p>
             <h2 className="mt-2 text-center font-display text-3xl font-bold">Vos avantages</h2>
@@ -93,7 +94,8 @@ const ConfierBien = () => {
       </AnimatedSection>
 
       {/* Form */}
-      <AnimatedSection className="bg-muted/50 py-20">
+      <AnimatedSection className="relative py-20 overflow-hidden bg-gradient-to-t from-primary/[0.04] via-muted/40 to-secondary/[0.05]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,hsl(var(--accent)/0.06),transparent_50%)]" />
         <div className="container max-w-lg">
           <AnimatedItem>
             <Card className="border-0 shadow-lg">

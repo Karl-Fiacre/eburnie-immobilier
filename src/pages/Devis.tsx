@@ -107,8 +107,9 @@ const Devis = () => {
       </section>
 
       {/* Types de devis */}
-      <AnimatedSection className="py-24 bg-white/80 backdrop-blur-sm">
-        <div className="container">
+      <AnimatedSection className="relative py-24 overflow-hidden bg-gradient-to-br from-muted/60 via-background to-accent/[0.05]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,hsl(var(--secondary)/0.08),transparent_50%)]" />
+        <div className="container relative">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Nos prestations</p>
             <h2 className="mt-3 text-center font-display text-3xl font-bold md:text-4xl">Types de devis</h2>
@@ -144,7 +145,8 @@ const Devis = () => {
       </AnimatedSection>
 
       {/* Étapes */}
-      <AnimatedSection className="py-24 bg-muted/30">
+      <AnimatedSection className="relative py-24 overflow-hidden bg-gradient-to-t from-primary/[0.04] via-secondary/[0.06] to-muted/30">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_50%,hsl(var(--accent)/0.07),transparent_50%)]" />
         <div className="container">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Comment ça marche</p>
@@ -180,8 +182,9 @@ const Devis = () => {
       </AnimatedSection>
 
       {/* Formulaire de devis */}
-      <AnimatedSection className="py-24 bg-white/80 backdrop-blur-sm">
-        <div className="container max-w-2xl">
+      <AnimatedSection className="relative py-24 overflow-hidden bg-gradient-to-br from-muted/40 via-background to-secondary/[0.04]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(var(--secondary)/0.06),transparent_50%)]" />
+        <div className="container relative max-w-2xl">
           <AnimatedItem>
             <Card className="border-0 shadow-xl">
               <CardContent className="p-10">

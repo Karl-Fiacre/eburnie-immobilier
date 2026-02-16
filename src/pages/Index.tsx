@@ -197,7 +197,9 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <AnimatedSection className="py-28 bg-white/80 backdrop-blur-sm">
+      <AnimatedSection className="relative py-28 overflow-hidden bg-gradient-to-br from-muted/80 via-background to-muted/40">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,hsl(var(--secondary)/0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,hsl(var(--accent)/0.06),transparent_50%)]" />
         <div className="container">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Ce que nous offrons</p>
@@ -234,8 +236,8 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Recent properties */}
-      <AnimatedSection className="relative py-28 overflow-hidden bg-white/80 backdrop-blur-sm">
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/60 via-muted/30 to-background" />
+      <AnimatedSection className="relative py-28 overflow-hidden bg-gradient-to-b from-primary/[0.04] via-secondary/[0.06] to-primary/[0.03]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(var(--secondary)/0.1),transparent_60%)]" />
         <div className="container relative">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Notre portefeuille</p>
@@ -264,8 +266,9 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Why DIFA-CI */}
-      <AnimatedSection className="py-28 bg-white/80 backdrop-blur-sm">
-        <div className="container">
+      <AnimatedSection className="relative py-28 overflow-hidden bg-gradient-to-br from-muted/60 via-background to-accent/[0.04]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,hsl(var(--accent)/0.08),transparent_50%)]" />
+        <div className="container relative">
           <AnimatedItem>
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence DIFA-CI</p>
             <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Pourquoi nous choisir ?</h2>
@@ -409,8 +412,9 @@ const Index = () => {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection className="py-28 bg-white/80 backdrop-blur-sm">
-        <div className="container">
+      <AnimatedSection className="relative py-28 overflow-hidden bg-gradient-to-t from-muted/50 via-background to-secondary/[0.04]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,hsl(var(--primary)/0.06),transparent_50%)]" />
+        <div className="container relative">
           <AnimatedItem>
             <motion.div
               className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary via-primary to-secondary p-14 text-center text-primary-foreground md:p-20"
