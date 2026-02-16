@@ -108,8 +108,9 @@ const NosBiens = () => {
       </motion.section>
 
       {/* Results */}
-      <section className="py-16">
-        <div className="container">
+      <section className="relative py-16 overflow-hidden bg-gradient-to-br from-muted/40 via-background to-accent/[0.03]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,hsl(var(--secondary)/0.06),transparent_50%)]" />
+        <div className="container relative">
           {isLoading ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[1,2,3].map(i => (

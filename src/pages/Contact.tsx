@@ -67,8 +67,9 @@ const Contact = () => {
         </div>
       </section>
 
-      <AnimatedSection className="py-20">
-        <div className="container">
+      <AnimatedSection className="relative py-20 overflow-hidden bg-gradient-to-br from-muted/50 via-background to-secondary/[0.04]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_70%,hsl(var(--accent)/0.06),transparent_50%)]" />
+        <div className="container relative">
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Info */}
             <div className="lg:col-span-2">

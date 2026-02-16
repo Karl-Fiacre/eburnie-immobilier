@@ -45,7 +45,8 @@ const APropos = () => (
     </section>
 
     {/* Story */}
-    <AnimatedSection className="py-20 bg-secondary/[0.04]">
+    <AnimatedSection className="relative py-20 overflow-hidden bg-gradient-to-br from-secondary/[0.06] via-muted/40 to-accent/[0.04]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_50%,hsl(var(--secondary)/0.08),transparent_50%)]" />
       <div className="container">
         <div className="grid gap-12 items-center lg:grid-cols-2">
           <AnimatedItem>
@@ -97,8 +98,9 @@ const APropos = () => (
     </AnimatedSection>
 
     {/* Values */}
-    <AnimatedSection className="py-20">
-      <div className="container">
+    <AnimatedSection className="relative py-20 overflow-hidden bg-gradient-to-br from-primary/[0.03] via-background to-secondary/[0.05]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_0%,hsl(var(--accent)/0.08),transparent_50%)]" />
+      <div className="container relative">
         <AnimatedItem>
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Ce qui nous guide</p>
           <h2 className="mt-2 text-center font-display text-3xl font-bold">Nos valeurs</h2>
@@ -120,7 +122,8 @@ const APropos = () => (
     </AnimatedSection>
 
     {/* Location */}
-    <AnimatedSection className="bg-muted/50 py-20">
+    <AnimatedSection className="relative py-20 overflow-hidden bg-gradient-to-t from-muted/60 via-secondary/[0.04] to-muted/30">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,hsl(var(--secondary)/0.06),transparent_50%)]" />
       <div className="container max-w-4xl">
         <AnimatedItem>
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Venez nous rencontrer</p>
