@@ -1,10 +1,20 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Clock, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
+
+const contactInfo = [
+  { icon: Phone, label: "Téléphone", value: "+225 00 00 00 00 00", href: "tel:+22500000000" },
+  { icon: Mail, label: "Email", value: "contact@difa-ci.com", href: "mailto:contact@difa-ci.com" },
+  { icon: MapPin, label: "Adresse", value: "AK Centre Commercial, Bouaké", href: null },
+  { icon: Clock, label: "Horaires", value: "Lun - Sam : 8h - 18h", href: null },
+];
 
 const Contact = () => {
   const { toast } = useToast();
@@ -36,53 +46,103 @@ const Contact = () => {
 
   return (
     <>
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="container text-center">
-          <h1 className="font-display text-4xl font-bold">Contact</h1>
-          <p className="mt-2 opacity-80">Nous sommes à votre écoute</p>
+      {/* Header */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
+        <div className="container relative z-10 text-center">
+          <motion.h1
+            className="font-display text-4xl font-bold md:text-5xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            Contactez-nous
+          </motion.h1>
+          <motion.p
+            className="mt-3 text-lg opacity-85"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            Notre équipe est prête à répondre à toutes vos questions
+          </motion.p>
         </div>
       </section>
 
-      <section className="py-16">
+      <AnimatedSection className="py-20">
         <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-12 lg:grid-cols-5">
             {/* Info */}
-            <div>
-              <h2 className="font-display text-2xl font-bold">Nos coordonnées</h2>
-              <div className="mt-6 space-y-4">
-                <p className="flex items-center gap-3"><Phone className="h-5 w-5 text-secondary" /> +225 00 00 00 00 00</p>
-                <p className="flex items-center gap-3"><Mail className="h-5 w-5 text-secondary" /> contact@difa-ci.com</p>
-                <p className="flex items-center gap-3"><MapPin className="h-5 w-5 text-secondary" /> AK Centre Commercial, Bouaké</p>
+            <div className="lg:col-span-2">
+              <AnimatedItem>
+                <h2 className="font-display text-2xl font-bold">Nos coordonnées</h2>
+                <p className="mt-3 text-muted-foreground">
+                  N'hésitez pas à nous contacter par téléphone, email ou en vous rendant directement à notre agence.
+                </p>
+              </AnimatedItem>
+              <div className="mt-8 space-y-4">
+                {contactInfo.map((c, i) => (
+                  <AnimatedItem key={c.label}>
+                    <motion.div whileHover={{ x: 4 }}>
+                      <Card className="border-0 shadow-sm transition-shadow hover:shadow-md">
+                        <CardContent className="flex items-center gap-4 p-4">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary/10">
+                            <c.icon className="h-5 w-5 text-secondary" />
+                          </div>
+                          <div>
+                            <p className="text-xs font-medium text-muted-foreground">{c.label}</p>
+                            {c.href ? (
+                              <a href={c.href} className="text-sm font-medium hover:text-secondary">{c.value}</a>
+                            ) : (
+                              <p className="text-sm font-medium">{c.value}</p>
+                            )}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  </AnimatedItem>
+                ))}
               </div>
-              <div className="mt-8 flex gap-4">
-                <Button asChild>
-                  <a href="https://wa.me/22500000000" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
-                </Button>
-              </div>
+              <AnimatedItem className="mt-8">
+                <div className="flex gap-3">
+                  <Button asChild className="bg-secondary hover:bg-secondary/90">
+                    <a href="https://wa.me/22500000000" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+                  </Button>
+                </div>
+              </AnimatedItem>
             </div>
 
             {/* Form */}
-            <div>
-              <h2 className="font-display text-2xl font-bold">Écrivez-nous</h2>
-              <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                <Input placeholder="Nom *" value={form.nom} onChange={(e) => setForm({ ...form, nom: e.target.value })} required />
-                <Input placeholder="Téléphone *" value={form.telephone} onChange={(e) => setForm({ ...form, telephone: e.target.value })} required />
-                <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-                <Textarea placeholder="Votre message" rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-                <Button type="submit" className="w-full" disabled={sending}>{sending ? "Envoi..." : "Envoyer"}</Button>
-              </form>
+            <div className="lg:col-span-3">
+              <AnimatedItem>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <h2 className="font-display text-2xl font-bold">Écrivez-nous</h2>
+                    <p className="mt-2 text-sm text-muted-foreground">Nous vous répondrons dans les meilleurs délais.</p>
+                    <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <Input placeholder="Nom *" value={form.nom} onChange={(e) => setForm({ ...form, nom: e.target.value })} required />
+                        <Input placeholder="Téléphone *" value={form.telephone} onChange={(e) => setForm({ ...form, telephone: e.target.value })} required />
+                      </div>
+                      <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+                      <Textarea placeholder="Votre message..." rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+                      <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" disabled={sending}>
+                        {sending ? "Envoi..." : <><Send className="mr-2 h-4 w-4" /> Envoyer le message</>}
+                      </Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              </AnimatedItem>
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 };
