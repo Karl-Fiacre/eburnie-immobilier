@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PropertyCard from "@/components/PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
-import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
-import { motion } from "framer-motion";
+import { AnimatedSection, AnimatedItem, CountUp, ParallaxLayer } from "@/components/AnimatedSection";
+import { motion, useScroll, useTransform } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const services = [
@@ -23,146 +23,173 @@ const reasons = [
 ];
 
 const stats = [
-  { value: "200+", label: "Biens gérés" },
-  { value: "500+", label: "Clients satisfaits" },
-  { value: "5+", label: "Années d'expertise" },
-  { value: "98%", label: "Taux de satisfaction" },
+  { value: 200, suffix: "+", label: "Biens gérés" },
+  { value: 500, suffix: "+", label: "Clients satisfaits" },
+  { value: 5, suffix: "+", label: "Années d'expertise" },
+  { value: 98, suffix: "%", label: "Taux de satisfaction" },
 ];
 
 const Index = () => {
   const { data: properties } = useProperties();
   const recent = properties?.slice(0, 6) ?? [];
+  const { scrollYProgress } = useScroll();
+  const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.15]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <img src={heroBg} alt="Immobilier à Bouaké" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-secondary/50" />
-        
-        {/* Animated geometric shapes */}
-        <motion.div
-          className="absolute left-10 top-20 h-32 w-32 rounded-full border border-primary-foreground/10"
-          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden">
+        <motion.img
+          src={heroBg}
+          alt="Immobilier à Bouaké"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ scale: heroScale }}
         />
-        <motion.div
-          className="absolute right-20 bottom-40 h-48 w-48 rounded-2xl border border-primary-foreground/5"
-          animate={{ scale: [1, 0.8, 1], rotate: [0, -45, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute right-1/4 top-1/4 h-20 w-20 rounded-full bg-secondary/10"
-          animate={{ y: [0, -30, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
-        <div className="relative z-10 container text-center text-primary-foreground">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-secondary/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--accent)/0.15),transparent_60%)]" />
+
+        {/* Floating geometric shapes */}
+        <ParallaxLayer speed={-0.15} className="absolute inset-0 pointer-events-none">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            className="absolute left-[8%] top-[15%] h-40 w-40 rounded-full border-2 border-primary-foreground/10"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute right-[12%] top-[20%] h-24 w-24 rounded-2xl border border-primary-foreground/8 bg-primary-foreground/5 backdrop-blur-sm"
+            animate={{ y: [0, -30, 0], rotate: [0, 15, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute left-[20%] bottom-[20%] h-16 w-16 rounded-full bg-secondary/15 backdrop-blur-sm"
+            animate={{ y: [0, 20, 0], x: [0, 10, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute right-[25%] bottom-[30%] h-32 w-32 rounded-3xl border border-accent/10"
+            animate={{ rotate: [-15, 15, -15], scale: [1, 1.05, 1] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute left-[45%] top-[10%] h-6 w-6 rounded-full bg-accent/20"
+            animate={{ y: [0, -40, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </ParallaxLayer>
+
+        <motion.div className="relative z-10 container text-center text-primary-foreground" style={{ opacity: heroOpacity }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <motion.div
-              className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-sm backdrop-blur"
-              initial={{ y: -20, opacity: 0 }}
+              className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-primary-foreground/15 bg-primary-foreground/8 px-5 py-2.5 text-sm backdrop-blur-md"
+              initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <Building className="h-4 w-4" />
-              <span>N°1 de l'immobilier à Bouaké</span>
+              <Building className="h-4 w-4 text-accent" />
+              <span className="font-medium tracking-wide">N°1 de l'immobilier à Bouaké</span>
             </motion.div>
-            <h1 className="font-display text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+            <h1 className="font-display text-5xl font-bold leading-[1.1] tracking-tight md:text-7xl lg:text-8xl">
               <motion.span
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.7 }}
+                initial={{ opacity: 0, y: 60, rotateX: 45 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ delay: 0.2, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="block"
               >
                 Votre partenaire
               </motion.span>
               <motion.span
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.7 }}
-                className="block text-accent"
+                initial={{ opacity: 0, y: 60, rotateX: 45 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ delay: 0.4, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="block text-gradient"
+                style={{ WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", backgroundImage: "linear-gradient(135deg, hsl(207 55% 60%), hsl(211 58% 65%), hsl(207 55% 75%))" }}
               >
                 immobilier de confiance
               </motion.span>
               <motion.span
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.7 }}
+                initial={{ opacity: 0, y: 60, rotateX: 45 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="block"
               >
                 à Bouaké
               </motion.span>
             </h1>
           </motion.div>
-          
+
           <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg opacity-90 md:text-xl"
-            initial={{ opacity: 0, y: 20 }}
+            className="mx-auto mt-8 max-w-2xl text-lg font-light leading-relaxed opacity-85 md:text-xl"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
           >
             Location – Gestion – Commercialisation de biens immobiliers. Des solutions sur mesure pour vos projets.
           </motion.p>
-          
+
           <motion.div
-            className="mt-10 flex flex-wrap justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
+            className="mt-12 flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 1.1, duration: 0.8 }}
           >
-            <Button size="lg" asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg shadow-secondary/30 px-8">
+            <Button size="lg" asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl shadow-secondary/25 px-8 text-base">
               <Link to="/biens">
                 Voir les biens <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur">
-              <a href="https://wa.me/22500000000" target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
+            <Button size="lg" variant="outline" asChild className="border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-md text-base">
+              <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
             </Button>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="h-10 w-6 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center pt-2">
+          <div className="h-12 w-7 rounded-full border-2 border-primary-foreground/25 flex items-start justify-center pt-2.5">
             <motion.div
-              className="h-2 w-1 rounded-full bg-primary-foreground/60"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              className="h-2.5 w-1.5 rounded-full bg-primary-foreground/50"
+              animate={{ y: [0, 14, 0], opacity: [1, 0.3, 1] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
         </motion.div>
       </section>
 
       {/* Stats */}
-      <section className="relative -mt-16 z-20">
+      <section className="relative -mt-20 z-20">
         <div className="container">
           <motion.div
-            className="grid grid-cols-2 gap-4 rounded-2xl bg-background p-8 shadow-xl md:grid-cols-4"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-2 gap-6 rounded-3xl glass-strong p-10 md:grid-cols-4"
+            initial={{ opacity: 0, y: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                className="relative text-center group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ delay: 0.15 * i, duration: 0.6 }}
               >
-                <p className="text-3xl font-bold text-secondary md:text-4xl">{s.value}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+                <motion.div
+                  className="absolute inset-0 rounded-2xl bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <p className="relative text-4xl font-bold text-secondary md:text-5xl font-display">
+                  <CountUp end={s.value} suffix={s.suffix} duration={2.5} />
+                </p>
+                <p className="relative mt-2 text-sm font-medium text-muted-foreground tracking-wide">{s.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -170,29 +197,33 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <AnimatedSection className="py-24">
+      <AnimatedSection className="py-28">
         <div className="container">
           <AnimatedItem>
-            <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Ce que nous offrons</p>
-            <h2 className="mt-2 text-center font-display text-3xl font-bold md:text-4xl">Nos Services</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Ce que nous offrons</p>
+            <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Nos Services</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-center text-muted-foreground leading-relaxed">
               Des solutions immobilières complètes et professionnelles pour répondre à tous vos besoins à Bouaké et dans ses environs.
             </p>
           </AnimatedItem>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s, i) => (
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
               <AnimatedItem key={s.title}>
-                <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-                  <Card className="h-full border-0 bg-muted/50 text-center shadow-none transition-all duration-300 hover:bg-background hover:shadow-lg">
-                    <CardContent className="p-6">
+                <motion.div
+                  whileHover={{ y: -12, scale: 1.02 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <Card className="group h-full border-0 bg-muted/40 text-center shadow-none transition-all duration-500 hover:glass-strong hover:shadow-2xl">
+                    <CardContent className="p-8">
                       <motion.div
-                        className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary to-accent text-secondary-foreground shadow-lg shadow-secondary/20"
-                        whileHover={{ rotate: 5, scale: 1.05 }}
+                        className="mx-auto flex h-18 w-18 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary to-accent text-secondary-foreground shadow-lg shadow-secondary/20"
+                        whileHover={{ rotate: 8, scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                       >
                         <s.icon className="h-8 w-8" />
                       </motion.div>
-                      <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                      <h3 className="mt-6 font-display text-2xl font-semibold">{s.title}</h3>
+                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -203,28 +234,29 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Recent properties */}
-      <AnimatedSection className="bg-muted/50 py-24">
-        <div className="container">
+      <AnimatedSection className="relative py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/60 via-muted/30 to-background" />
+        <div className="container relative">
           <AnimatedItem>
-            <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Notre portefeuille</p>
-            <h2 className="mt-2 text-center font-display text-3xl font-bold md:text-4xl">Biens récents</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Notre portefeuille</p>
+            <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Biens récents</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-center text-muted-foreground leading-relaxed">
               Découvrez nos dernières annonces immobilières soigneusement sélectionnées à Bouaké.
             </p>
           </AnimatedItem>
           {recent.length > 0 ? (
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {recent.map((p) => (
                 <PropertyCard key={p.id} {...p} />
               ))}
             </div>
           ) : (
             <AnimatedItem>
-              <p className="mt-14 text-center text-muted-foreground">Aucun bien disponible pour le moment.</p>
+              <p className="mt-16 text-center text-muted-foreground">Aucun bien disponible pour le moment.</p>
             </AnimatedItem>
           )}
-          <AnimatedItem className="mt-12 text-center">
-            <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 px-8 shadow-lg shadow-secondary/20">
+          <AnimatedItem className="mt-14 text-center">
+            <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 px-10 shadow-xl shadow-secondary/20 text-base">
               <Link to="/biens">Voir toutes les annonces <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </AnimatedItem>
@@ -232,20 +264,27 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Why DIFA-CI */}
-      <AnimatedSection className="py-24">
+      <AnimatedSection className="py-28">
         <div className="container">
           <AnimatedItem>
-            <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">La différence DIFA-CI</p>
-            <h2 className="mt-2 text-center font-display text-3xl font-bold md:text-4xl">Pourquoi nous choisir ?</h2>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence DIFA-CI</p>
+            <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Pourquoi nous choisir ?</h2>
           </AnimatedItem>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {reasons.map((r, i) => (
+          <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {reasons.map((r) => (
               <AnimatedItem key={r.title}>
-                <motion.div className="group text-center" whileHover={{ y: -5 }}>
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <r.icon className="h-8 w-8 text-primary transition-colors group-hover:text-primary-foreground" />
-                  </div>
-                  <h3 className="mt-5 font-display text-lg font-semibold">{r.title}</h3>
+                <motion.div
+                  className="group text-center"
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="mx-auto flex h-18 w-18 items-center justify-center rounded-full bg-primary/8 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:shadow-xl group-hover:shadow-primary/20"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <r.icon className="h-8 w-8 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
+                  </motion.div>
+                  <h3 className="mt-6 font-display text-xl font-semibold">{r.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{r.desc}</p>
                 </motion.div>
               </AnimatedItem>
@@ -255,49 +294,70 @@ const Index = () => {
       </AnimatedSection>
 
       {/* Testimonial */}
-      <AnimatedSection className="bg-primary py-20 text-primary-foreground">
-        <div className="container text-center">
+      <AnimatedSection className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--accent)/0.1),transparent_50%)]" />
+        <ParallaxLayer speed={-0.1} className="absolute inset-0 pointer-events-none">
+          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-primary-foreground/5" />
+          <div className="absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-primary-foreground/3" />
+        </ParallaxLayer>
+        <div className="container relative text-center text-primary-foreground">
           <AnimatedItem>
-            <div className="flex justify-center gap-1 mb-4">
+            <div className="flex justify-center gap-1.5 mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i, type: "spring", stiffness: 200 }}
+                >
+                  <Star className="h-6 w-6 fill-accent text-accent" />
+                </motion.div>
               ))}
             </div>
-            <blockquote className="mx-auto max-w-3xl font-display text-2xl font-medium italic leading-relaxed md:text-3xl">
+            <blockquote className="mx-auto max-w-3xl font-display text-3xl font-medium italic leading-relaxed md:text-4xl">
               "DIFA-CI & Business a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de Bouaké sont remarquables."
             </blockquote>
-            <p className="mt-6 text-sm opacity-70">— Un client satisfait à Bouaké</p>
+            <p className="mt-8 text-sm font-medium opacity-60 tracking-wider uppercase">— Un client satisfait à Bouaké</p>
           </AnimatedItem>
         </div>
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection className="py-24">
+      <AnimatedSection className="py-28">
         <div className="container">
           <AnimatedItem>
             <motion.div
-              className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-secondary p-12 text-center text-primary-foreground md:p-16"
+              className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary via-primary to-secondary p-14 text-center text-primary-foreground md:p-20"
               whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.4 }}
             >
-              {/* Background decoration */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(var(--accent)/0.15),transparent_50%)]" />
               <div className="absolute inset-0 opacity-10">
-                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent" />
-                <div className="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-secondary" />
+                <motion.div
+                  className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-accent"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute -bottom-24 -left-24 h-60 w-60 rounded-full bg-secondary"
+                  animate={{ scale: [1, 0.85, 1] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                />
               </div>
-              
               <div className="relative z-10">
-                <h2 className="font-display text-3xl font-bold md:text-4xl">
-                  Prêt à concrétiser votre projet immobilier ?
+                <h2 className="font-display text-4xl font-bold md:text-5xl leading-tight">
+                  Prêt à concrétiser votre<br />projet immobilier ?
                 </h2>
-                <p className="mx-auto mt-4 max-w-xl text-lg opacity-85">
+                <p className="mx-auto mt-6 max-w-xl text-lg opacity-80 leading-relaxed">
                   Que vous cherchiez un logement ou souhaitiez confier votre bien, notre équipe est à votre service.
                 </p>
-                <div className="mt-10 flex flex-wrap justify-center gap-4">
-                  <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 shadow-lg">
+                <div className="mt-12 flex flex-wrap justify-center gap-4">
+                  <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 shadow-xl text-base">
                     <Link to="/contact">Demander une visite</Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button size="lg" variant="outline" asChild className="border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 text-base">
                     <Link to="/confier-bien">Confier mon bien</Link>
                   </Button>
                 </div>
