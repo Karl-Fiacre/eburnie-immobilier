@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import { FileText, Calculator, Clock, CheckCircle, Send, Ruler, PaintBucket, Wrench, Building } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const devisTypes = [
   { icon: Building, title: "Construction", desc: "Estimation complète pour vos projets de construction neuve à Bouaké et environs." },
@@ -64,6 +65,12 @@ const Devis = () => {
 
   return (
     <>
+      <SEOHead
+        title="Demande de Devis Gratuit"
+        description="Obtenez un devis gratuit pour vos projets immobiliers à Bouaké : construction, rénovation, aménagement. Réponse sous 48h par DIFA-CI & Business."
+        canonical="/devis"
+        keywords="devis immobilier Bouaké, devis construction Côte d'Ivoire, devis rénovation Bouaké, estimation travaux"
+      />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-24 text-primary-foreground">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--accent)/0.2),transparent_60%)]" />
