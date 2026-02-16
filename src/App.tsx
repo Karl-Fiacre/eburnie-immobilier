@@ -9,6 +9,7 @@ import NosBiens from "./pages/NosBiens";
 import PropertyDetail from "./pages/PropertyDetail";
 import ConfierBien from "./pages/ConfierBien";
 import APropos from "./pages/APropos";
+import Devis from "./pages/Devis";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/biens/:id" element={<PropertyDetail />} />
             <Route path="/confier-bien" element={<ConfierBien />} />
             <Route path="/a-propos" element={<APropos />} />
+            <Route path="/devis" element={<Devis />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
           <Route path="/admin/login" element={<AdminLogin />} />
