@@ -2,6 +2,7 @@ import { ShieldCheck, Eye, Users, Building, Target, Heart, Award, Lightbulb } fr
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const values = [
   { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bouaké en offrant des services d'excellence accessibles à tous les budgets." },
@@ -37,6 +38,7 @@ const APropos = () => (
         }
       }}
     />
+    <Breadcrumb items={[{ label: "À propos" }]} />
     {/* Header */}
     <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
       <motion.div

@@ -8,6 +8,7 @@ import { useProperties } from "@/hooks/useProperties";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const NosBiens = () => {
   const [listingType, setListingType] = useState<string>("");
@@ -39,6 +40,7 @@ const NosBiens = () => {
           "provider": { "@type": "RealEstateAgent", "name": "DIFA-CI & Business" }
         }}
       />
+      <Breadcrumb items={[{ label: "Nos Biens" }]} />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
         <motion.div

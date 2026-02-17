@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import { Home, ShieldCheck, TrendingUp, Users, Send } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const advantages = [
   { icon: ShieldCheck, title: "Gestion sécurisée", desc: "Vos biens sont entre de bonnes mains. Nous gérons tout avec rigueur et professionnalisme." },
@@ -68,6 +69,7 @@ const ConfierBien = () => {
           "serviceType": ["Gestion locative", "Recherche de locataires", "Suivi technique", "Commercialisation"]
         }}
       />
+      <Breadcrumb items={[{ label: "Confier mon bien" }]} />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
         <div className="container relative z-10 text-center">

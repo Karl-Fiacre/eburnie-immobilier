@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const contactInfo = [
   { icon: Phone, label: "Téléphone", value: "+225 00 00 00 00 00", href: "tel:+22500000000" },
@@ -76,6 +77,7 @@ const Contact = () => {
           }
         }}
       />
+      <Breadcrumb items={[{ label: "Contact" }]} />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
         <div className="container relative z-10 text-center">
