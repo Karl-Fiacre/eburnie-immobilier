@@ -11,6 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const PropertyDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -86,6 +87,7 @@ const PropertyDetail = () => {
           }
         }}
       />
+      <Breadcrumb items={[{ label: "Nos Biens", href: "/biens" }, { label: property.title }]} />
       <motion.div
         className="container py-6"
         initial={{ opacity: 0 }}
