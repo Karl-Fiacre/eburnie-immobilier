@@ -70,6 +70,19 @@ const Devis = () => {
         description="Obtenez un devis gratuit pour vos projets immobiliers à Bouaké : construction, rénovation, aménagement. Réponse sous 48h par DIFA-CI & Business."
         canonical="/devis"
         keywords="devis immobilier Bouaké, devis construction Côte d'Ivoire, devis rénovation Bouaké, estimation travaux"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Devis immobilier gratuit à Bouaké",
+          "description": "Obtenez un devis gratuit pour vos projets de construction, rénovation ou aménagement immobilier à Bouaké.",
+          "provider": {
+            "@type": "RealEstateAgent",
+            "name": "DIFA-CI & Business",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bouaké", "addressCountry": "CI" }
+          },
+          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "serviceType": ["Construction", "Rénovation", "Aménagement", "Maintenance"]
+        }}
       />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-24 text-primary-foreground">

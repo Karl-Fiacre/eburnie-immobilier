@@ -54,6 +54,19 @@ const ConfierBien = () => {
         description="Confiez la gestion de votre bien immobilier à DIFA-CI & Business à Bouaké. Gestion locative, recherche de locataires et suivi technique professionnels."
         canonical="/confier-bien"
         keywords="gestion locative Bouaké, confier bien immobilier, gérer propriété Côte d'Ivoire, rendement locatif Bouaké"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Gestion locative à Bouaké",
+          "description": "Confiez la gestion de votre bien immobilier à DIFA-CI & Business. Recherche de locataires, suivi technique et rendement optimisé.",
+          "provider": {
+            "@type": "RealEstateAgent",
+            "name": "DIFA-CI & Business",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bouaké", "addressCountry": "CI" }
+          },
+          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "serviceType": ["Gestion locative", "Recherche de locataires", "Suivi technique", "Commercialisation"]
+        }}
       />
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-20 text-primary-foreground">
