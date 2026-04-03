@@ -53,7 +53,7 @@ const APropos = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          À propos de DIFA-CI & Business
+          À propos de {company.name}
         </motion.h1>
         <motion.p
           className="mx-auto mt-3 max-w-xl text-lg opacity-85"
