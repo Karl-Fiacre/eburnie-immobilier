@@ -375,7 +375,7 @@ const Index = () => {
                 rating: 5,
               },
               {
-                quote: "Grâce à DIFA-CI, j'ai pu confier mes biens en toute sérénité. La gestion locative est irréprochable et les rapports sont clairs.",
+                quote: `Grâce à ${company.shortName}, j'ai pu confier mes biens en toute sérénité. La gestion locative est irréprochable et les rapports sont clairs.`,
                 name: "Traoré Ibrahim",
                 role: "Investisseur immobilier",
                 rating: 5,
