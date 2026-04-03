@@ -23,19 +23,19 @@ const APropos = () => (
   <>
     <SEOHead
       title="À propos"
-      description="Découvrez DIFA-CI & Business, agence immobilière à Bouaké depuis 2019. Notre mission, nos valeurs et notre expertise du marché immobilier en Côte d'Ivoire."
+      description={`Découvrez ${company.name}, agence immobilière à ${company.address.city} depuis ${company.foundingYear}. Notre mission, nos valeurs et notre expertise du marché immobilier en ${company.address.country}.`}
       canonical="/a-propos"
-      keywords="à propos DIFA-CI, agence immobilière Bouaké, histoire DIFA-CI, valeurs immobilier Côte d'Ivoire"
+      keywords={`à propos ${company.shortName}, agence immobilière ${company.address.city}, histoire ${company.shortName}, valeurs immobilier ${company.address.country}`}
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "À propos de DIFA-CI & Business",
-        "description": "Agence immobilière fondée en 2019 à Bouaké, Côte d'Ivoire.",
+        "name": `À propos de ${company.name}`,
+        "description": `Agence immobilière fondée en ${company.foundingYear} à ${company.address.city}, ${company.address.country}.`,
         "mainEntity": {
           "@type": "Organization",
-          "name": "DIFA-CI & Business",
-          "foundingDate": "2019",
-          "foundingLocation": "Bouaké, Côte d'Ivoire"
+          "name": company.name,
+          "foundingDate": company.foundingYear,
+          "foundingLocation": `${company.address.city}, ${company.address.country}`
         }
       }}
     />
