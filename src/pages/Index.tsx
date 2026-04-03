@@ -142,7 +142,7 @@ const Index = () => {
                 transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="block"
               >
-                à Bouaké
+                à {company.address.city}
               </motion.span>
             </h1>
           </motion.div>
