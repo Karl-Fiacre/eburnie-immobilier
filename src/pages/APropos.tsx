@@ -150,7 +150,7 @@ const APropos = () => (
         <AnimatedItem>
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Venez nous rencontrer</p>
           <h2 className="mt-2 text-center font-display text-3xl font-bold">Nous trouver</h2>
-          <p className="mt-4 text-center text-muted-foreground">AK Centre Commercial – Bouaké, Côte d'Ivoire</p>
+          <p className="mt-4 text-center text-muted-foreground">{company.address.full} – {company.address.country}</p>
         </AnimatedItem>
         <AnimatedItem className="mt-8">
           <div className="aspect-video overflow-hidden rounded-2xl border shadow-lg">
