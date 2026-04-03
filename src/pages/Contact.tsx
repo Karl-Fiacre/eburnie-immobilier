@@ -57,17 +57,17 @@ const Contact = () => {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contactez DIFA-CI & Business",
+          "name": `Contactez ${company.name}`,
           "mainEntity": {
             "@type": "RealEstateAgent",
-            "name": "DIFA-CI & Business",
-            "telephone": ["+22527316144 78", "+2250787421119"],
-            "email": "contact@difa-ci.com",
+            "name": company.name,
+            "telephone": company.phones.map(p => p.raw),
+            "email": company.email,
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "AK Centre Commercial",
-              "addressLocality": "Bouaké",
-              "addressCountry": "CI"
+              "streetAddress": company.address.street,
+              "addressLocality": company.address.city,
+              "addressCountry": company.address.countryCode
             },
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
