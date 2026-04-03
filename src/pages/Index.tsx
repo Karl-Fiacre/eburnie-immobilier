@@ -8,6 +8,7 @@ import { AnimatedSection, AnimatedItem, CountUp, ParallaxLayer } from "@/compone
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 import SEOHead from "@/components/SEOHead";
+import { company } from "@/config/company";
 
 const services = [
   { icon: Home, title: "Location", desc: "Trouvez la maison ou l'appartement idéal dans les quartiers prisés de Bouaké. Nous sélectionnons pour vous des biens de qualité." },
