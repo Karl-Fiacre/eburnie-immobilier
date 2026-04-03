@@ -116,7 +116,7 @@ const Index = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               <Building className="h-4 w-4 text-accent" />
-              <span className="font-medium tracking-wide">N°1 de l'immobilier à Bouaké</span>
+              <span className="font-medium tracking-wide">N°1 de l'immobilier à {company.address.city}</span>
             </motion.div>
             <h1 className="font-display text-5xl font-bold leading-[1.1] tracking-tight md:text-7xl lg:text-8xl">
               <motion.span
