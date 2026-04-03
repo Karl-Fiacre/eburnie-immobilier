@@ -168,7 +168,7 @@ const Index = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="border-primary/40 text-primary hover:bg-primary/10 backdrop-blur-md text-base">
-              <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
+              <a href={company.whatsapp.url} target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
             </Button>
           </motion.div>
         </motion.div>
