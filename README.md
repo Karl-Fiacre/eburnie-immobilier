@@ -1,73 +1,156 @@
-# Welcome to your Lovable project
+# 🏠 Template Site Immobilier – Lovable
 
-## Project info
+Modèle professionnel de site web pour agence immobilière, construit avec React, Tailwind CSS et Lovable Cloud.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚀 Démarrage rapide
 
-There are several ways of editing your application.
+1. **Remix** ce projet depuis Lovable (nom du projet → Settings → Remix)
+2. Suivez le guide ci-dessous pour personnaliser le site pour votre client
+3. Publiez via Lovable
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🎨 Guide de personnalisation
 
-Changes made via Lovable will be committed automatically to this repo.
+### 1. Identité visuelle
 
-**Use your preferred IDE**
+| Élément | Fichier | Ce qu'il faut modifier |
+|---------|---------|----------------------|
+| **Logo** | `src/assets/logo.png` | Remplacer par le logo du client |
+| **Image hero** | `src/assets/hero-bg.jpg` | Remplacer par la photo principale |
+| **Favicon** | `index.html` | Modifier la balise `<link rel="icon">` |
+| **Couleurs** | `src/index.css` | Variables CSS `:root` (voir section Couleurs) |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+#### Couleurs (`src/index.css`)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Les couleurs principales à modifier dans `:root` (format HSL) :
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```css
+--primary: 216 50% 20%;        /* Couleur principale (bleu nuit) */
+--secondary: 211 58% 44%;      /* Couleur secondaire (bleu moyen) */
+--accent: 207 55% 60%;         /* Couleur d'accentuation (bleu clair) */
+--background: 220 20% 98%;     /* Fond général */
+--foreground: 216 40% 13%;     /* Texte principal */
 ```
 
-**Edit a file directly in GitHub**
+> 💡 Pensez aussi à modifier le thème `.dark` si vous conservez le mode sombre.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### Typographies (`src/index.css` + `tailwind.config.ts`)
 
-**Use GitHub Codespaces**
+- Police titres : `Cormorant Garamond` → remplacer dans `@import` et dans `h1-h4`
+- Police corps : `Plus Jakarta Sans` → remplacer dans `@import` et `fontFamily.sans`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+### 2. Informations de l'entreprise
 
-This project is built with:
+| Information | Fichiers à modifier |
+|-------------|-------------------|
+| **Nom de l'entreprise** | `src/components/SEOHead.tsx` (`SITE_NAME`), `src/components/Footer.tsx`, `src/pages/Index.tsx`, `src/pages/APropos.tsx` |
+| **Numéros de téléphone** | `src/components/Footer.tsx`, `src/pages/Contact.tsx` |
+| **Email** | `src/components/Footer.tsx`, `src/pages/Contact.tsx` |
+| **Adresse** | `src/components/Footer.tsx`, `src/pages/Contact.tsx`, `src/pages/APropos.tsx` |
+| **WhatsApp** | `src/components/WhatsAppButton.tsx` (`WHATSAPP_NUMBER`) |
+| **Domaine web** | `src/components/SEOHead.tsx` (`BASE_URL`) |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+### 3. Contenu des pages
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+| Page | Fichier | Éléments à adapter |
+|------|---------|-------------------|
+| **Accueil** | `src/pages/Index.tsx` | Titre hero, services, arguments, statistiques, témoignages |
+| **À propos** | `src/pages/APropos.tsx` | Historique, valeurs, jalons, description |
+| **Nos Biens** | `src/pages/NosBiens.tsx` | Texte d'en-tête (les biens viennent de la BDD) |
+| **Confier mon bien** | `src/pages/ConfierBien.tsx` | Texte d'accroche, avantages |
+| **Devis** | `src/pages/Devis.tsx` | Étapes, textes du formulaire |
+| **Contact** | `src/pages/Contact.tsx` | Coordonnées, horaires, lien Google Maps |
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+### 4. SEO & Référencement
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+| Élément | Fichier |
+|---------|---------|
+| **Nom du site / URL** | `src/components/SEOHead.tsx` → `SITE_NAME` et `BASE_URL` |
+| **Meta descriptions** | Chaque page dans le composant `<SEOHead>` |
+| **Mots-clés locaux** | Remplacer "Bouaké" par la ville du client dans tous les `keywords` |
+| **JSON-LD Schema.org** | Objets `jsonLd` dans chaque page — adapter nom, adresse, téléphone |
+| **Sitemap** | `public/sitemap.xml` — mettre à jour les URLs |
+| **Robots.txt** | `public/robots.txt` — mettre à jour l'URL du sitemap |
+| **Open Graph** | `index.html` — balises `og:image`, `og:url` |
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+### 5. Navigation
+
+| Élément | Fichier |
+|---------|---------|
+| **Liens du menu** | `src/components/Navbar.tsx` → tableau `links` |
+| **Liens du footer** | `src/components/Footer.tsx` |
+| **Routes** | `src/App.tsx` → `<Routes>` |
+
+---
+
+### 6. Back-office admin
+
+| Élément | Fichier |
+|---------|---------|
+| **Page de connexion** | `src/pages/admin/AdminLogin.tsx` |
+| **Gestion des biens** | `src/pages/admin/AdminProperties.tsx` |
+| **Messages reçus** | `src/pages/admin/AdminMessages.tsx` |
+
+> Le back-office fonctionne avec Lovable Cloud (authentification + base de données). Chaque remix dispose de sa propre base.
+
+---
+
+### 7. Réseaux sociaux
+
+Rechercher et remplacer les liens vers Facebook, TikTok, Instagram dans :
+- `src/pages/Contact.tsx`
+- `src/components/Footer.tsx`
+
+---
+
+## 📋 Checklist de personnalisation
+
+- [ ] Remplacer le logo (`src/assets/logo.png`)
+- [ ] Remplacer l'image hero (`src/assets/hero-bg.jpg`)
+- [ ] Modifier les couleurs dans `src/index.css`
+- [ ] Mettre à jour `SITE_NAME` et `BASE_URL` dans `SEOHead.tsx`
+- [ ] Mettre à jour `WHATSAPP_NUMBER` dans `WhatsAppButton.tsx`
+- [ ] Modifier les coordonnées dans `Footer.tsx` et `Contact.tsx`
+- [ ] Adapter le contenu de la page À propos
+- [ ] Adapter le contenu de la page d'accueil (hero, services, stats)
+- [ ] Mettre à jour le `sitemap.xml` et `robots.txt`
+- [ ] Mettre à jour les données JSON-LD dans chaque page
+- [ ] Remplacer "Bouaké" par la ville du client partout
+- [ ] Modifier les liens réseaux sociaux
+- [ ] Créer un compte admin dans Lovable Cloud
+- [ ] Tester sur mobile et publier
+
+---
+
+## 🛠 Technologies
+
+- **React 18** + TypeScript + Vite
+- **Tailwind CSS** + shadcn/ui
+- **Framer Motion** (animations)
+- **Lovable Cloud** (base de données, auth, stockage photos)
+- **react-helmet-async** (SEO dynamique)
+
+---
+
+## 📦 Structure du projet
+
+```
+src/
+├── assets/          → Logo, images
+├── components/      → Navbar, Footer, WhatsApp, SEOHead, PropertyCard...
+├── hooks/           → useProperties, use-toast...
+├── integrations/    → Client Lovable Cloud (ne pas modifier)
+├── pages/           → Pages publiques + admin/
+└── index.css        → Design tokens (couleurs, typos)
+```
