@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { company } from "@/config/company";
 
 interface SEOHeadProps {
   title: string;
@@ -9,12 +10,9 @@ interface SEOHeadProps {
   jsonLd?: object;
 }
 
-const SITE_NAME = "DIFA-CI & Business";
-const BASE_URL = "https://difa-ci.com";
-
 const SEOHead = ({ title, description, canonical, keywords, type = "website", jsonLd }: SEOHeadProps) => {
-  const fullTitle = `${title} | ${SITE_NAME}`;
-  const url = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
+  const fullTitle = `${title} | ${company.name}`;
+  const url = canonical ? `${company.seo.baseUrl}${canonical}` : company.seo.baseUrl;
 
   return (
     <Helmet>
@@ -27,7 +25,7 @@ const SEOHead = ({ title, description, canonical, keywords, type = "website", js
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:site_name" content={company.name} />
 
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
+import { company } from "@/config/company";
 
 const values = [
   { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bouaké en offrant des services d'excellence accessibles à tous les budgets." },
@@ -22,19 +23,19 @@ const APropos = () => (
   <>
     <SEOHead
       title="À propos"
-      description="Découvrez DIFA-CI & Business, agence immobilière à Bouaké depuis 2019. Notre mission, nos valeurs et notre expertise du marché immobilier en Côte d'Ivoire."
+      description={`Découvrez ${company.name}, agence immobilière à ${company.address.city} depuis ${company.foundingYear}. Notre mission, nos valeurs et notre expertise du marché immobilier en ${company.address.country}.`}
       canonical="/a-propos"
-      keywords="à propos DIFA-CI, agence immobilière Bouaké, histoire DIFA-CI, valeurs immobilier Côte d'Ivoire"
+      keywords={`à propos ${company.shortName}, agence immobilière ${company.address.city}, histoire ${company.shortName}, valeurs immobilier ${company.address.country}`}
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "À propos de DIFA-CI & Business",
-        "description": "Agence immobilière fondée en 2019 à Bouaké, Côte d'Ivoire.",
+        "name": `À propos de ${company.name}`,
+        "description": `Agence immobilière fondée en ${company.foundingYear} à ${company.address.city}, ${company.address.country}.`,
         "mainEntity": {
           "@type": "Organization",
-          "name": "DIFA-CI & Business",
-          "foundingDate": "2019",
-          "foundingLocation": "Bouaké, Côte d'Ivoire"
+          "name": company.name,
+          "foundingDate": company.foundingYear,
+          "foundingLocation": `${company.address.city}, ${company.address.country}`
         }
       }}
     />
@@ -52,7 +53,7 @@ const APropos = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          À propos de DIFA-CI & Business
+          À propos de {company.name}
         </motion.h1>
         <motion.p
           className="mx-auto mt-3 max-w-xl text-lg opacity-85"
@@ -149,13 +150,13 @@ const APropos = () => (
         <AnimatedItem>
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-secondary">Venez nous rencontrer</p>
           <h2 className="mt-2 text-center font-display text-3xl font-bold">Nous trouver</h2>
-          <p className="mt-4 text-center text-muted-foreground">AK Centre Commercial – Bouaké, Côte d'Ivoire</p>
+          <p className="mt-4 text-center text-muted-foreground">{company.address.full} – {company.address.country}</p>
         </AnimatedItem>
         <AnimatedItem className="mt-8">
           <div className="aspect-video overflow-hidden rounded-2xl border shadow-lg">
             <iframe
-              title="DIFA-CI Bouaké"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31589.42!2d-5.03!3d7.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfb57a0a7d5b3c3d%3A0x1c5e5e5e5e5e5e5e!2sBouak%C3%A9%2C+C%C3%B4te+d&#39;Ivoire!5e0!3m2!1sfr!2sci!4v1700000000000"
+              title={`${company.name} ${company.address.city}`}
+              src={company.address.mapEmbed}
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
             />
           </div>

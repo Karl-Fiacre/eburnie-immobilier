@@ -8,6 +8,7 @@ import { AnimatedSection, AnimatedItem, CountUp, ParallaxLayer } from "@/compone
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 import SEOHead from "@/components/SEOHead";
+import { company } from "@/config/company";
 
 const services = [
   { icon: Home, title: "Location", desc: "Trouvez la maison ou l'appartement idéal dans les quartiers prisés de Bouaké. Nous sélectionnons pour vous des biens de qualité." },
@@ -23,12 +24,7 @@ const reasons = [
   { icon: Network, title: "Réseau étendu", desc: "Un large portefeuille de biens et un réseau de partenaires dans toute la région." },
 ];
 
-const stats = [
-  { value: 200, suffix: "+", label: "Biens gérés" },
-  { value: 500, suffix: "+", label: "Clients satisfaits" },
-  { value: 5, suffix: "+", label: "Années d'expertise" },
-  { value: 98, suffix: "%", label: "Taux de satisfaction" },
-];
+const stats = company.stats;
 
 const Index = () => {
   const { data: properties } = useProperties();
@@ -43,22 +39,22 @@ const Index = () => {
         title="Agence Immobilière à Bouaké"
         description="DIFA-CI & Business, votre agence immobilière de confiance à Bouaké. Location, vente, gestion locative de maisons, appartements et terrains en Côte d'Ivoire."
         canonical="/"
-        keywords="immobilier Bouaké, location maison Bouaké, agence immobilière Côte d'Ivoire, vente terrain Bouaké, gestion locative Bouaké, appartement Bouaké"
+        keywords={`immobilier ${company.address.city}, location maison ${company.address.city}, agence immobilière ${company.address.country}, vente terrain ${company.address.city}`}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
-          "name": "DIFA-CI & Business",
-          "description": "Agence immobilière de confiance à Bouaké spécialisée dans la location, vente et gestion de biens immobiliers.",
-          "url": "https://difa-ci.com",
-          "telephone": ["+22527316144 78", "+2250787421119"],
-          "email": "contact@difa-ci.com",
+          "name": company.name,
+          "description": company.description,
+          "url": company.seo.baseUrl,
+          "telephone": company.phones.map(p => p.raw),
+          "email": company.email,
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "AK Centre Commercial",
-            "addressLocality": "Bouaké",
-            "addressCountry": "CI"
+            "streetAddress": company.address.street,
+            "addressLocality": company.address.city,
+            "addressCountry": company.address.countryCode
           },
-          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "areaServed": { "@type": "City", "name": company.address.city },
           "priceRange": "$$",
           "aggregateRating": {
             "@type": "AggregateRating",
@@ -120,7 +116,7 @@ const Index = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               <Building className="h-4 w-4 text-accent" />
-              <span className="font-medium tracking-wide">N°1 de l'immobilier à Bouaké</span>
+              <span className="font-medium tracking-wide">N°1 de l'immobilier à {company.address.city}</span>
             </motion.div>
             <h1 className="font-display text-5xl font-bold leading-[1.1] tracking-tight md:text-7xl lg:text-8xl">
               <motion.span
@@ -146,7 +142,7 @@ const Index = () => {
                 transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="block"
               >
-                à Bouaké
+                à {company.address.city}
               </motion.span>
             </h1>
           </motion.div>
@@ -172,7 +168,7 @@ const Index = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="border-primary/40 text-primary hover:bg-primary/10 backdrop-blur-md text-base">
-              <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
+              <a href={company.whatsapp.url} target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
             </Button>
           </motion.div>
         </motion.div>
@@ -299,7 +295,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,hsl(var(--accent)/0.08),transparent_50%)]" />
         <div className="container relative">
           <AnimatedItem>
-            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence DIFA-CI</p>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence {company.shortName}</p>
             <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Pourquoi nous choisir ?</h2>
           </AnimatedItem>
           <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -367,7 +363,7 @@ const Index = () => {
           <div className="mt-20 grid gap-8 md:grid-cols-3">
             {[
               {
-                quote: "DIFA-CI & Business a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de Bouaké sont remarquables.",
+                quote: `${company.name} a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de ${company.address.city} sont remarquables.`,
                 name: "Kouamé Ange",
                 role: "Propriétaire à Koko",
                 rating: 5,
@@ -379,7 +375,7 @@ const Index = () => {
                 rating: 5,
               },
               {
-                quote: "Grâce à DIFA-CI, j'ai pu confier mes biens en toute sérénité. La gestion locative est irréprochable et les rapports sont clairs.",
+                quote: `Grâce à ${company.shortName}, j'ai pu confier mes biens en toute sérénité. La gestion locative est irréprochable et les rapports sont clairs.`,
                 name: "Traoré Ibrahim",
                 role: "Investisseur immobilier",
                 rating: 5,

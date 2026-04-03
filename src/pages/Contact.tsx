@@ -10,12 +10,13 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
+import { company } from "@/config/company";
 
 const contactInfo = [
-  { icon: Phone, label: "Téléphone", value: "+225 00 00 00 00 00", href: "tel:+22500000000" },
-  { icon: Mail, label: "Email", value: "contact@difa-ci.com", href: "mailto:contact@difa-ci.com" },
-  { icon: MapPin, label: "Adresse", value: "AK Centre Commercial, Bouaké", href: null },
-  { icon: Clock, label: "Horaires", value: "Lun - Sam : 8h - 18h", href: null },
+  { icon: Phone, label: "Téléphone", value: company.phones[0]?.display, href: `tel:${company.phones[0]?.raw}` },
+  { icon: Mail, label: "Email", value: company.email, href: `mailto:${company.email}` },
+  { icon: MapPin, label: "Adresse", value: company.address.full, href: null },
+  { icon: Clock, label: "Horaires", value: company.hours, href: null },
 ];
 
 const Contact = () => {
@@ -56,17 +57,17 @@ const Contact = () => {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contactez DIFA-CI & Business",
+          "name": `Contactez ${company.name}`,
           "mainEntity": {
             "@type": "RealEstateAgent",
-            "name": "DIFA-CI & Business",
-            "telephone": ["+22527316144 78", "+2250787421119"],
-            "email": "contact@difa-ci.com",
+            "name": company.name,
+            "telephone": company.phones.map(p => p.raw),
+            "email": company.email,
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "AK Centre Commercial",
-              "addressLocality": "Bouaké",
-              "addressCountry": "CI"
+              "streetAddress": company.address.street,
+              "addressLocality": company.address.city,
+              "addressCountry": company.address.countryCode
             },
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
@@ -137,16 +138,20 @@ const Contact = () => {
               <AnimatedItem className="mt-8">
                 <div className="flex gap-3">
                   <Button asChild className="bg-secondary hover:bg-secondary/90">
-                    <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">
+                    <a href={company.whatsapp.url} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
                     </a>
                   </Button>
-                  <Button variant="outline" asChild>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
-                  </Button>
+                  {company.social.facebook && (
+                    <Button variant="outline" asChild>
+                      <a href={company.social.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </Button>
+                  )}
+                  {company.social.tiktok && (
+                    <Button variant="outline" asChild>
+                      <a href={company.social.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+                    </Button>
+                  )}
                 </div>
               </AnimatedItem>
             </div>

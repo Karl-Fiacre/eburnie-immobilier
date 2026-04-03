@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
+import { company } from "@/config/company";
 
 const Footer = () => (
   <footer className="border-t bg-primary text-primary-foreground" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
@@ -12,9 +13,9 @@ const Footer = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <img src={logo} alt="DIFA-CI & Business - Agence immobilière à Bouaké" className="mb-4 h-20 w-auto" />
+          <img src={logo} alt={`${company.name} - Agence immobilière à ${company.address.city}`} className="mb-4 h-20 w-auto" />
           <p className="text-sm opacity-80">
-            Votre partenaire immobilier de confiance à Bouaké. Location, gestion et commercialisation de biens immobiliers.
+            {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
         </motion.div>
         <motion.div
@@ -55,16 +56,16 @@ const Footer = () => (
         >
           <h4 className="mb-4 font-display text-lg font-bold">Contact</h4>
           <div className="flex flex-col gap-3 text-sm opacity-80">
-            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 27 31 61 44 78</span>
-            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 07 87 42 11 19</span>
-            <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +225 05 04 42 47 48</span>
-            <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@difa-ci.com</span>
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> AK Centre Commercial, Bouaké</span>
+            {company.phones.map((p) => (
+              <span key={p.raw} className="flex items-center gap-2"><Phone className="h-4 w-4" /> {p.display}</span>
+            ))}
+            <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> {company.email}</span>
+            <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {company.address.full}</span>
           </div>
         </motion.div>
       </div>
       <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} DIFA-CI & Business. Tous droits réservés.
+        © {new Date().getFullYear()} {company.name}. Tous droits réservés.
       </div>
     </div>
   </footer>
