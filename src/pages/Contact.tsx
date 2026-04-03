@@ -10,12 +10,13 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
+import { company } from "@/config/company";
 
 const contactInfo = [
-  { icon: Phone, label: "Téléphone", value: "+225 00 00 00 00 00", href: "tel:+22500000000" },
-  { icon: Mail, label: "Email", value: "contact@difa-ci.com", href: "mailto:contact@difa-ci.com" },
-  { icon: MapPin, label: "Adresse", value: "AK Centre Commercial, Bouaké", href: null },
-  { icon: Clock, label: "Horaires", value: "Lun - Sam : 8h - 18h", href: null },
+  { icon: Phone, label: "Téléphone", value: company.phones[0]?.display, href: `tel:${company.phones[0]?.raw}` },
+  { icon: Mail, label: "Email", value: company.email, href: `mailto:${company.email}` },
+  { icon: MapPin, label: "Adresse", value: company.address.full, href: null },
+  { icon: Clock, label: "Horaires", value: company.hours, href: null },
 ];
 
 const Contact = () => {
