@@ -39,22 +39,22 @@ const Index = () => {
         title="Agence Immobilière à Bouaké"
         description="DIFA-CI & Business, votre agence immobilière de confiance à Bouaké. Location, vente, gestion locative de maisons, appartements et terrains en Côte d'Ivoire."
         canonical="/"
-        keywords="immobilier Bouaké, location maison Bouaké, agence immobilière Côte d'Ivoire, vente terrain Bouaké, gestion locative Bouaké, appartement Bouaké"
+        keywords={`immobilier ${company.address.city}, location maison ${company.address.city}, agence immobilière ${company.address.country}, vente terrain ${company.address.city}`}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
-          "name": "DIFA-CI & Business",
-          "description": "Agence immobilière de confiance à Bouaké spécialisée dans la location, vente et gestion de biens immobiliers.",
-          "url": "https://difa-ci.com",
-          "telephone": ["+22527316144 78", "+2250787421119"],
-          "email": "contact@difa-ci.com",
+          "name": company.name,
+          "description": company.description,
+          "url": company.seo.baseUrl,
+          "telephone": company.phones.map(p => p.raw),
+          "email": company.email,
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "AK Centre Commercial",
-            "addressLocality": "Bouaké",
-            "addressCountry": "CI"
+            "streetAddress": company.address.street,
+            "addressLocality": company.address.city,
+            "addressCountry": company.address.countryCode
           },
-          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "areaServed": { "@type": "City", "name": company.address.city },
           "priceRange": "$$",
           "aggregateRating": {
             "@type": "AggregateRating",

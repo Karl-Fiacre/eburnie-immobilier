@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
+import { company } from "@/config/company";
 
 const values = [
   { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bouaké en offrant des services d'excellence accessibles à tous les budgets." },
