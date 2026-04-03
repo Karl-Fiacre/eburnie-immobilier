@@ -295,7 +295,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,hsl(var(--accent)/0.08),transparent_50%)]" />
         <div className="container relative">
           <AnimatedItem>
-            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence DIFA-CI</p>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">La différence {company.shortName}</p>
             <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Pourquoi nous choisir ?</h2>
           </AnimatedItem>
           <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
