@@ -138,16 +138,20 @@ const Contact = () => {
               <AnimatedItem className="mt-8">
                 <div className="flex gap-3">
                   <Button asChild className="bg-secondary hover:bg-secondary/90">
-                    <a href="https://wa.me/2250787421119" target="_blank" rel="noopener noreferrer">
+                    <a href={company.whatsapp.url} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
                     </a>
                   </Button>
-                  <Button variant="outline" asChild>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
-                  </Button>
+                  {company.social.facebook && (
+                    <Button variant="outline" asChild>
+                      <a href={company.social.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </Button>
+                  )}
+                  {company.social.tiktok && (
+                    <Button variant="outline" asChild>
+                      <a href={company.social.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+                    </Button>
+                  )}
                 </div>
               </AnimatedItem>
             </div>
