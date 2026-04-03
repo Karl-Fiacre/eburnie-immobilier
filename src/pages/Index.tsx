@@ -24,12 +24,7 @@ const reasons = [
   { icon: Network, title: "Réseau étendu", desc: "Un large portefeuille de biens et un réseau de partenaires dans toute la région." },
 ];
 
-const stats = [
-  { value: 200, suffix: "+", label: "Biens gérés" },
-  { value: 500, suffix: "+", label: "Clients satisfaits" },
-  { value: 5, suffix: "+", label: "Années d'expertise" },
-  { value: 98, suffix: "%", label: "Taux de satisfaction" },
-];
+const stats = company.stats;
 
 const Index = () => {
   const { data: properties } = useProperties();
