@@ -363,7 +363,7 @@ const Index = () => {
           <div className="mt-20 grid gap-8 md:grid-cols-3">
             {[
               {
-                quote: "DIFA-CI & Business a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de Bouaké sont remarquables.",
+                quote: `${company.name} a su trouver le bien parfait pour notre famille. Leur professionnalisme et leur connaissance du marché de ${company.address.city} sont remarquables.`,
                 name: "Kouamé Ange",
                 role: "Propriétaire à Koko",
                 rating: 5,
