@@ -75,14 +75,14 @@ const APropos = () => (
             <p className="text-sm font-semibold uppercase tracking-widest text-secondary">Notre histoire</p>
             <h2 className="mt-2 font-display text-3xl font-bold">Née de la passion pour l'immobilier à Bonoua</h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Eburnie Immobilier est née de la volonté de professionnaliser le secteur immobilier à Bonoua. 
-              Face aux défis du marché local — manque de transparence, offres peu structurées, absence de suivi — 
-              nous avons décidé de créer une agence qui place le client au centre de tout.
+              Eburnie Immobilier est une section d'activité d'<strong>Eburnie Corporation</strong>, basée à Bonoua, 
+              au carrefour Maison Blanche à Yaou. Née de la volonté de professionnaliser le secteur immobilier 
+              dans la région, elle place le client au centre de chaque projet — transparence, structure et suivi rigoureux.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Forte d'une connaissance approfondie du marché local et d'un réseau solide, notre équipe accompagne 
-              propriétaires et locataires dans toutes leurs démarches immobilières avec sérieux, dévouement et 
-              une exigence de qualité qui fait notre réputation.
+              Forte d'une connaissance approfondie du marché local et de l'appui d'Eburnie Corporation, notre équipe 
+              accompagne propriétaires et locataires dans toutes leurs démarches immobilières avec sérieux, dévouement 
+              et une exigence de qualité qui fait notre réputation.
             </p>
           </AnimatedItem>
           <AnimatedItem>
