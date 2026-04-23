@@ -3,12 +3,19 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 import IdentityPreview from "./IdentityPreview";
+import ScrollProgress from "./ScrollProgress";
+import CursorGlow from "./CursorGlow";
+import PageTransition from "./PageTransition";
 
 const Layout = () => (
-  <div className="flex min-h-screen flex-col">
+  <div className="relative flex min-h-screen flex-col overflow-x-hidden">
+    <ScrollProgress />
+    <CursorGlow />
     <Navbar />
-    <main className="flex-1">
-      <Outlet />
+    <main className="relative flex-1">
+      <PageTransition>
+        <Outlet />
+      </PageTransition>
     </main>
     <Footer />
     <WhatsAppButton />
