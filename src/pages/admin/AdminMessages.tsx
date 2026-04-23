@@ -56,7 +56,7 @@ const AdminMessages = () => {
                 <TableCell className="font-medium">{m.nom}</TableCell>
                 <TableCell>{m.telephone}</TableCell>
                 <TableCell className="max-w-xs truncate">{m.message || m.localisation || "—"}</TableCell>
-                <TableCell>{(m.properties as any)?.title || "—"}</TableCell>
+                <TableCell>{(m.properties_immobilier as any)?.title || "—"}</TableCell>
                 <TableCell className="text-sm text-muted-foreground">{new Date(m.created_at).toLocaleDateString("fr-FR")}</TableCell>
                 <TableCell>
                   {m.is_read ? (
