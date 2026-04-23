@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin
 
-Sitemap: https://difa-ci.com/sitemap.xml
+Sitemap: https://eburnie-immobilier.ci/sitemap.xml
