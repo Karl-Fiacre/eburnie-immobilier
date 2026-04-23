@@ -1,45 +1,30 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, Link, useLocation } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { Building, MessageSquare, LogOut, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const AdminLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const checkAdmin = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) { navigate("/admin/login"); return; }
-      const { data } = await supabase
-        .from("user_roles_immobilier")
-        .select("role")
-        .eq("user_id", session.user.id)
-        .eq("role", "admin")
-        .maybeSingle();
-      if (!data) { navigate("/admin/login"); return; }
-      setIsAdmin(true);
-      setLoading(false);
-    };
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) navigate("/admin/login");
-    });
-
-    checkAdmin();
-    return () => subscription.unsubscribe();
+    const ok = sessionStorage.getItem("admin_authenticated") === "true";
+    if (!ok) {
+      navigate("/admin/login");
+      return;
+    }
+    setReady(true);
   }, [navigate]);
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
+  const handleLogout = () => {
+    sessionStorage.removeItem("admin_authenticated");
+    sessionStorage.removeItem("admin_authenticated_at");
     navigate("/admin/login");
   };
 
-  if (loading) return <div className="flex min-h-screen items-center justify-center text-muted-foreground">Chargement...</div>;
-  if (!isAdmin) return null;
+  if (!ready) return <div className="flex min-h-screen items-center justify-center text-muted-foreground">Chargement...</div>;
+
 
   const navItems = [
     { to: "/admin", icon: Building, label: "Biens", exact: true },
