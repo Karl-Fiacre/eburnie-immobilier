@@ -13,7 +13,7 @@ const NotFound = () => {
     <>
       <SEOHead
         title="Page introuvable"
-        description="La page que vous recherchez n'existe pas. Retournez à l'accueil de DIFA-CI & Business."
+        description="La page que vous recherchez n'existe pas. Retournez à l'accueil de Eburnie Immobilier."
       />
       <div className="flex min-h-screen items-center justify-center bg-muted">
         <div className="text-center">

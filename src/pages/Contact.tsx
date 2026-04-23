@@ -51,9 +51,9 @@ const Contact = () => {
     <>
       <SEOHead
         title="Contactez-nous"
-        description="Contactez DIFA-CI & Business à Bouaké par téléphone, email ou WhatsApp. Notre équipe est disponible du lundi au samedi pour répondre à vos questions immobilières."
+        description="Contactez Eburnie Immobilier à Bonoua par téléphone, email ou WhatsApp. Notre équipe est disponible du lundi au samedi pour répondre à vos questions immobilières."
         canonical="/contact"
-        keywords="contact DIFA-CI Bouaké, agence immobilière contact, téléphone immobilier Bouaké, WhatsApp DIFA-CI"
+        keywords="contact Eburnie Immobilier Bonoua, agence immobilière contact, téléphone immobilier Bonoua, WhatsApp Eburnie Immobilier"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
