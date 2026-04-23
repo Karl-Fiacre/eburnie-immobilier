@@ -14,7 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      messages: {
+      messages_immobilier: {
         Row: {
           created_at: string
           email: string | null
@@ -56,15 +56,15 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "messages_property_id_fkey"
+            foreignKeyName: "messages_immobilier_property_id_fkey"
             columns: ["property_id"]
             isOneToOne: false
-            referencedRelation: "properties"
+            referencedRelation: "properties_immobilier"
             referencedColumns: ["id"]
           },
         ]
       }
-      properties: {
+      properties_immobilier: {
         Row: {
           chambres: number | null
           conditions: string | null
@@ -118,7 +118,7 @@ export type Database = {
         }
         Relationships: []
       }
-      user_roles: {
+      user_roles_immobilier: {
         Row: {
           id: string
           role: Database["public"]["Enums"]["app_role"]
@@ -142,6 +142,13 @@ export type Database = {
     }
     Functions: {
       has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      has_role_immobilier: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string

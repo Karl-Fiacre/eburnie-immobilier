@@ -33,7 +33,7 @@ const AdminProperties = () => {
   const { data: properties, isLoading } = useQuery({
     queryKey: ["admin-properties"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("properties").select("*").order("created_at", { ascending: false });
+      const { data, error } = await supabase.from("properties_immobilier").select("*").order("created_at", { ascending: false });
       if (error) throw error;
       return data;
     },
@@ -73,10 +73,10 @@ const AdminProperties = () => {
       };
 
       if (editId) {
-        const { error } = await supabase.from("properties").update(payload).eq("id", editId);
+        const { error } = await supabase.from("properties_immobilier").update(payload).eq("id", editId);
         if (error) throw error;
       } else {
-        const { error } = await supabase.from("properties").insert(payload);
+        const { error } = await supabase.from("properties_immobilier").insert(payload);
         if (error) throw error;
       }
     },
@@ -93,7 +93,7 @@ const AdminProperties = () => {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from("properties").delete().eq("id", id);
+      const { error } = await supabase.from("properties_immobilier").delete().eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => {

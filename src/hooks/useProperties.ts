@@ -12,7 +12,7 @@ export const useProperties = (filters?: {
     queryKey: ["properties", filters],
     queryFn: async () => {
       let query = supabase
-        .from("properties")
+        .from("properties_immobilier")
         .select("*")
         .order("created_at", { ascending: false });
 
@@ -34,7 +34,7 @@ export const useProperty = (id: string) => {
     queryKey: ["property", id],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from("properties")
+        .from("properties_immobilier")
         .select("*")
         .eq("id", id)
         .single();

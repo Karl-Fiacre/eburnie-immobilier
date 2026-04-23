@@ -46,7 +46,7 @@ const Devis = () => {
       return;
     }
     setSending(true);
-    const { error } = await supabase.from("messages").insert({
+    const { error } = await supabase.from("messages_immobilier").insert({
       message_type: "contact" as const,
       nom: form.nom.trim(),
       telephone: form.telephone.trim(),
