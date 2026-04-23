@@ -28,16 +28,16 @@ const NosBiens = () => {
   return (
     <>
       <SEOHead
-        title="Nos Biens Immobiliers à Bouaké"
-        description="Explorez notre catalogue de maisons, appartements, terrains et bureaux à louer ou à vendre à Bouaké. Biens sélectionnés avec soin par DIFA-CI & Business."
+        title="Nos Biens Immobiliers à Bonoua"
+        description="Explorez notre catalogue de maisons, appartements, terrains et bureaux à louer ou à vendre à Bonoua. Biens sélectionnés avec soin par Eburnie Immobilier."
         canonical="/biens"
-        keywords="location maison Bouaké, appartement à louer Bouaké, terrain à vendre Bouaké, bureau Bouaké, immobilier Côte d'Ivoire"
+        keywords="location maison Bonoua, appartement à louer Bonoua, terrain à vendre Bonoua, bureau Bonoua, immobilier Côte d'Ivoire"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Biens immobiliers à Bouaké",
-          "description": "Catalogue de biens immobiliers disponibles à la location et à la vente à Bouaké.",
-          "provider": { "@type": "RealEstateAgent", "name": "DIFA-CI & Business" }
+          "name": "Biens immobiliers à Bonoua",
+          "description": "Catalogue de biens immobiliers disponibles à la location et à la vente à Bonoua.",
+          "provider": { "@type": "RealEstateAgent", "name": "Eburnie Immobilier" }
         }}
       />
       <Breadcrumb items={[{ label: "Nos Biens" }]} />
@@ -63,7 +63,7 @@ const NosBiens = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Explorez notre catalogue de biens soigneusement sélectionnés à Bouaké
+            Explorez notre catalogue de biens soigneusement sélectionnés à Bonoua
           </motion.p>
         </div>
       </section>

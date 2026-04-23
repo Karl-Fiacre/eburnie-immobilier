@@ -35,7 +35,7 @@ const AdminLayout = () => {
     <div className="flex min-h-screen">
       <aside className="w-60 border-r bg-sidebar text-sidebar-foreground">
         <div className="p-4">
-          <Link to="/" className="font-display text-lg font-bold text-sidebar-primary">DIFA-CI</Link>
+          <Link to="/" className="font-display text-lg font-bold text-sidebar-primary">Eburnie Immobilier</Link>
         </div>
         <nav className="mt-4 space-y-1 px-2">
           {navItems.map((item) => {

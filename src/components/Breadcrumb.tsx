@@ -11,7 +11,7 @@ interface BreadcrumbProps {
   items: BreadcrumbItem[];
 }
 
-const BASE_URL = "https://difa-ci.com";
+const BASE_URL = "https://eburnie-immobilier.ci";
 
 const Breadcrumb = ({ items }: BreadcrumbProps) => {
   const jsonLd = {

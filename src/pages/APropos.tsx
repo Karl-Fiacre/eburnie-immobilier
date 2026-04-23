@@ -6,15 +6,15 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { company } from "@/config/company";
 
 const values = [
-  { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bouaké en offrant des services d'excellence accessibles à tous les budgets." },
+  { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bonoua en offrant des services d'excellence accessibles à tous les budgets." },
   { icon: ShieldCheck, title: "Intégrité", desc: "Nous plaçons l'honnêteté et la transparence au cœur de chaque transaction. Aucun frais caché, aucune surprise." },
   { icon: Users, title: "Proximité", desc: "Un accompagnement humain et personnalisé pour chaque client, du premier contact à la remise des clés." },
   { icon: Award, title: "Excellence", desc: "Des standards élevés dans la sélection et la gestion des biens pour garantir votre entière satisfaction." },
 ];
 
 const milestones = [
-  { year: "2019", title: "Création", desc: "Fondation de DIFA-CI & Business à Bouaké avec une vision claire : professionnaliser l'immobilier local." },
-  { year: "2021", title: "Croissance", desc: "Développement du portefeuille avec plus de 100 biens gérés dans les principaux quartiers de Bouaké." },
+  { year: "2019", title: "Création", desc: "Fondation de Eburnie Immobilier à Bonoua avec une vision claire : professionnaliser l'immobilier local." },
+  { year: "2021", title: "Croissance", desc: "Développement du portefeuille avec plus de 100 biens gérés dans les principaux quartiers de Bonoua." },
   { year: "2023", title: "Expansion", desc: "Extension des services vers la commercialisation et la mise en relation propriétaires-locataires." },
   { year: "2025", title: "Innovation", desc: "Lancement de notre plateforme digitale pour faciliter la recherche et la gestion de biens immobiliers." },
 ];
@@ -61,7 +61,7 @@ const APropos = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Une agence immobilière enracinée à Bouaké, au service de votre réussite
+          Une agence immobilière enracinée à Bonoua, au service de votre réussite
         </motion.p>
       </div>
     </section>
@@ -73,16 +73,16 @@ const APropos = () => (
         <div className="grid gap-12 items-center lg:grid-cols-2">
           <AnimatedItem>
             <p className="text-sm font-semibold uppercase tracking-widest text-secondary">Notre histoire</p>
-            <h2 className="mt-2 font-display text-3xl font-bold">Née de la passion pour l'immobilier à Bouaké</h2>
+            <h2 className="mt-2 font-display text-3xl font-bold">Née de la passion pour l'immobilier à Bonoua</h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              DIFA-CI & Business est née de la volonté de professionnaliser le secteur immobilier à Bouaké. 
-              Face aux défis du marché local — manque de transparence, offres peu structurées, absence de suivi — 
-              nous avons décidé de créer une agence qui place le client au centre de tout.
+              Eburnie Immobilier est une section d'activité d'<strong>Eburnie Corporation</strong>, basée à Bonoua, 
+              au carrefour Maison Blanche à Yaou. Née de la volonté de professionnaliser le secteur immobilier 
+              dans la région, elle place le client au centre de chaque projet — transparence, structure et suivi rigoureux.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Forte d'une connaissance approfondie du marché local et d'un réseau solide, notre équipe accompagne 
-              propriétaires et locataires dans toutes leurs démarches immobilières avec sérieux, dévouement et 
-              une exigence de qualité qui fait notre réputation.
+              Forte d'une connaissance approfondie du marché local et de l'appui d'Eburnie Corporation, notre équipe 
+              accompagne propriétaires et locataires dans toutes leurs démarches immobilières avec sérieux, dévouement 
+              et une exigence de qualité qui fait notre réputation.
             </p>
           </AnimatedItem>
           <AnimatedItem>
@@ -111,7 +111,7 @@ const APropos = () => (
           <Lightbulb className="mx-auto h-10 w-10 text-accent mb-4" />
           <h2 className="font-display text-3xl font-bold">Notre mission</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed opacity-85">
-            Faciliter l'accès à des biens immobiliers de qualité à Bouaké, en offrant un service 
+            Faciliter l'accès à des biens immobiliers de qualité à Bonoua, en offrant un service 
             professionnel, transparent et personnalisé. Nous croyons que chaque personne mérite un 
             logement adapté à ses besoins et à son budget.
           </p>

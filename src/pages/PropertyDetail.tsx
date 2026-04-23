@@ -63,15 +63,15 @@ const PropertyDetail = () => {
     <>
       <SEOHead
         title={`${property.title} - ${property.listing_type === "location" ? "Location" : "Vente"} à ${property.quartier}`}
-        description={`${property.property_type} ${property.listing_type === "location" ? "à louer" : "à vendre"} à ${property.quartier}, Bouaké. ${property.price.toLocaleString("fr-FR")} FCFA${property.listing_type === "location" ? "/mois" : ""}. ${property.surface ? property.surface + " m²" : ""} ${property.chambres ? property.chambres + " chambres" : ""}`.trim()}
+        description={`${property.property_type} ${property.listing_type === "location" ? "à louer" : "à vendre"} à ${property.quartier}, Bonoua. ${property.price.toLocaleString("fr-FR")} FCFA${property.listing_type === "location" ? "/mois" : ""}. ${property.surface ? property.surface + " m²" : ""} ${property.chambres ? property.chambres + " chambres" : ""}`.trim()}
         canonical={`/biens/${property.id}`}
-        keywords={`${property.property_type} ${property.quartier} Bouaké, ${property.listing_type} ${property.property_type}, immobilier ${property.quartier}`}
+        keywords={`${property.property_type} ${property.quartier} Bonoua, ${property.listing_type} ${property.property_type}, immobilier ${property.quartier}`}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "RealEstateListing",
           "name": property.title,
           "description": property.description || `${property.property_type} disponible à ${property.quartier}`,
-          "url": `https://difa-ci.com/biens/${property.id}`,
+          "url": `https://eburnie-immobilier.ci/biens/${property.id}`,
           "image": images[0] !== "/placeholder.svg" ? images[0] : undefined,
           "offers": {
             "@type": "Offer",
@@ -82,7 +82,7 @@ const PropertyDetail = () => {
           "address": {
             "@type": "PostalAddress",
             "addressLocality": property.quartier,
-            "addressRegion": "Bouaké",
+            "addressRegion": "Bonoua",
             "addressCountry": "CI"
           }
         }}

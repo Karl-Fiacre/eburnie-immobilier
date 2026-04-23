@@ -14,7 +14,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 
 const advantages = [
   { icon: ShieldCheck, title: "Gestion sécurisée", desc: "Vos biens sont entre de bonnes mains. Nous gérons tout avec rigueur et professionnalisme." },
-  { icon: TrendingUp, title: "Rendement optimisé", desc: "Maximisez vos revenus locatifs grâce à notre connaissance du marché de Bouaké." },
+  { icon: TrendingUp, title: "Rendement optimisé", desc: "Maximisez vos revenus locatifs grâce à notre connaissance du marché de Bonoua." },
   { icon: Users, title: "Locataires vérifiés", desc: "Nous sélectionnons des locataires fiables et solvables pour votre tranquillité." },
   { icon: Home, title: "Suivi technique", desc: "Entretien, réparations et état des lieux réguliers pour préserver votre patrimoine." },
 ];
@@ -52,20 +52,20 @@ const ConfierBien = () => {
     <>
       <SEOHead
         title="Confier mon bien"
-        description="Confiez la gestion de votre bien immobilier à DIFA-CI & Business à Bouaké. Gestion locative, recherche de locataires et suivi technique professionnels."
+        description="Confiez la gestion de votre bien immobilier à Eburnie Immobilier à Bonoua. Gestion locative, recherche de locataires et suivi technique professionnels."
         canonical="/confier-bien"
-        keywords="gestion locative Bouaké, confier bien immobilier, gérer propriété Côte d'Ivoire, rendement locatif Bouaké"
+        keywords="gestion locative Bonoua, confier bien immobilier, gérer propriété Côte d'Ivoire, rendement locatif Bonoua"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Gestion locative à Bouaké",
-          "description": "Confiez la gestion de votre bien immobilier à DIFA-CI & Business. Recherche de locataires, suivi technique et rendement optimisé.",
+          "name": "Gestion locative à Bonoua",
+          "description": "Confiez la gestion de votre bien immobilier à Eburnie Immobilier. Recherche de locataires, suivi technique et rendement optimisé.",
           "provider": {
             "@type": "RealEstateAgent",
-            "name": "DIFA-CI & Business",
-            "address": { "@type": "PostalAddress", "addressLocality": "Bouaké", "addressCountry": "CI" }
+            "name": "Eburnie Immobilier",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bonoua", "addressCountry": "CI" }
           },
-          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "areaServed": { "@type": "City", "name": "Bonoua" },
           "serviceType": ["Gestion locative", "Recherche de locataires", "Suivi technique", "Commercialisation"]
         }}
       />
@@ -86,7 +86,7 @@ const ConfierBien = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Propriétaire à Bouaké ? Laissez-nous gérer, louer ou vendre votre bien en toute sérénité. Notre expertise locale est votre meilleur atout.
+            Propriétaire à Bonoua ? Laissez-nous gérer, louer ou vendre votre bien en toute sérénité. Notre expertise locale est votre meilleur atout.
           </motion.p>
         </div>
       </section>

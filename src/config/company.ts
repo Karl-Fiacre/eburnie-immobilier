@@ -8,31 +8,30 @@
 
 export const company = {
   // ── Identité ──────────────────────────────────────────────
-  name: "DIFA-CI & Business",
-  shortName: "DIFA-CI",
-  slogan: "Votre partenaire immobilier de confiance à Bouaké",
+  name: "Eburnie Immobilier",
+  shortName: "Eburnie Immobilier",
+  parentCompany: "Eburnie Corporation",
+  slogan: "Votre partenaire immobilier de confiance à Bonoua",
   description:
-    "Agence immobilière de confiance à Bouaké spécialisée dans la location, vente et gestion de biens immobiliers.",
+    "Eburnie Immobilier, section d'activité d'Eburnie Corporation, agence immobilière de confiance à Bonoua spécialisée dans la location, vente et gestion de biens immobiliers.",
   foundingYear: "2019",
 
   // ── Coordonnées ───────────────────────────────────────────
   phones: [
-    { display: "+225 27 31 61 44 78", raw: "+22527316144 78" },
     { display: "+225 07 87 42 11 19", raw: "+2250787421119" },
-    { display: "+225 05 04 42 47 48", raw: "+2250504424748" },
   ],
-  email: "contact@difa-ci.com",
+  email: "contact@eburnie-immobilier.ci",
   hours: "Lun - Sam : 8h - 18h",
 
   // ── Adresse ───────────────────────────────────────────────
   address: {
-    street: "AK Centre Commercial",
-    city: "Bouaké",
+    street: "Yaou, Carrefour Maison Blanche",
+    city: "Bonoua",
     country: "Côte d'Ivoire",
     countryCode: "CI",
-    full: "AK Centre Commercial, Bouaké",
+    full: "Yaou, Carrefour Maison Blanche, Bonoua",
     mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31589.42!2d-5.03!3d7.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfb57a0a7d5b3c3d%3A0x1c5e5e5e5e5e5e5e!2sBouak%C3%A9%2C+C%C3%B4te+d'Ivoire!5e0!3m2!1sfr!2sci!4v1700000000000",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31787.5!2d-3.59!3d5.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBonoua%2C+C%C3%B4te+d'Ivoire!5e0!3m2!1sfr!2sci!4v1700000000000",
   },
 
   // ── WhatsApp ──────────────────────────────────────────────
@@ -47,14 +46,12 @@ export const company = {
   social: {
     facebook: "https://facebook.com",
     tiktok: "https://tiktok.com",
-    // instagram: "",
-    // linkedin: "",
   },
 
   // ── SEO ───────────────────────────────────────────────────
   seo: {
-    baseUrl: "https://difa-ci.com",
-    defaultKeywords: "immobilier Bouaké, agence immobilière Côte d'Ivoire",
+    baseUrl: "https://eburnie-immobilier.ci",
+    defaultKeywords: "immobilier Bonoua, agence immobilière Côte d'Ivoire, Eburnie Immobilier, Eburnie Corporation, location maison Bonoua, vente terrain Bonoua",
     locale: "fr_CI",
   },
 

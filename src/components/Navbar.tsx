@@ -27,7 +27,7 @@ const Navbar = () => {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="DIFA-CI & Business" className="h-12 w-auto" />
+          <img src={logo} alt="Eburnie Immobilier" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop */}

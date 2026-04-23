@@ -27,7 +27,7 @@ const PropertyCard = ({ id, title, property_type, listing_type, price, quartier,
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={images?.[0] || "/placeholder.svg"}
-          alt={`${property_type} ${listing_type === "location" ? "à louer" : "à vendre"} à ${quartier}, Bouaké - ${title}`}
+          alt={`${property_type} ${listing_type === "location" ? "à louer" : "à vendre"} à ${quartier}, Bonoua - ${title}`}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />

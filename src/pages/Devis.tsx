@@ -13,7 +13,7 @@ import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const devisTypes = [
-  { icon: Building, title: "Construction", desc: "Estimation complète pour vos projets de construction neuve à Bouaké et environs." },
+  { icon: Building, title: "Construction", desc: "Estimation complète pour vos projets de construction neuve à Bonoua et environs." },
   { icon: PaintBucket, title: "Rénovation", desc: "Devis détaillé pour la rénovation, la peinture et la remise en état de vos biens." },
   { icon: Ruler, title: "Aménagement", desc: "Chiffrage pour l'aménagement intérieur et extérieur de vos espaces." },
   { icon: Wrench, title: "Maintenance", desc: "Budget prévisionnel pour l'entretien régulier et les réparations de vos propriétés." },
@@ -68,20 +68,20 @@ const Devis = () => {
     <>
       <SEOHead
         title="Demande de Devis Gratuit"
-        description="Obtenez un devis gratuit pour vos projets immobiliers à Bouaké : construction, rénovation, aménagement. Réponse sous 48h par DIFA-CI & Business."
+        description="Obtenez un devis gratuit pour vos projets immobiliers à Bonoua : construction, rénovation, aménagement. Réponse sous 48h par Eburnie Immobilier."
         canonical="/devis"
-        keywords="devis immobilier Bouaké, devis construction Côte d'Ivoire, devis rénovation Bouaké, estimation travaux"
+        keywords="devis immobilier Bonoua, devis construction Côte d'Ivoire, devis rénovation Bonoua, estimation travaux"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Devis immobilier gratuit à Bouaké",
-          "description": "Obtenez un devis gratuit pour vos projets de construction, rénovation ou aménagement immobilier à Bouaké.",
+          "name": "Devis immobilier gratuit à Bonoua",
+          "description": "Obtenez un devis gratuit pour vos projets de construction, rénovation ou aménagement immobilier à Bonoua.",
           "provider": {
             "@type": "RealEstateAgent",
-            "name": "DIFA-CI & Business",
-            "address": { "@type": "PostalAddress", "addressLocality": "Bouaké", "addressCountry": "CI" }
+            "name": "Eburnie Immobilier",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bonoua", "addressCountry": "CI" }
           },
-          "areaServed": { "@type": "City", "name": "Bouaké" },
+          "areaServed": { "@type": "City", "name": "Bonoua" },
           "serviceType": ["Construction", "Rénovation", "Aménagement", "Maintenance"]
         }}
       />
@@ -123,7 +123,7 @@ const Devis = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Obtenez une estimation personnalisée et gratuite pour tous vos projets immobiliers à Bouaké. Construction, rénovation, aménagement — nous chiffrons tout.
+            Obtenez une estimation personnalisée et gratuite pour tous vos projets immobiliers à Bonoua. Construction, rénovation, aménagement — nous chiffrons tout.
           </motion.p>
         </div>
       </section>

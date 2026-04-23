@@ -11,14 +11,14 @@ import SEOHead from "@/components/SEOHead";
 import { company } from "@/config/company";
 
 const services = [
-  { icon: Home, title: "Location", desc: "Trouvez la maison ou l'appartement idéal dans les quartiers prisés de Bouaké. Nous sélectionnons pour vous des biens de qualité." },
+  { icon: Home, title: "Location", desc: "Trouvez la maison ou l'appartement idéal dans les quartiers prisés de Bonoua. Nous sélectionnons pour vous des biens de qualité." },
   { icon: ClipboardList, title: "Gestion locative", desc: "Confiez-nous la gestion complète de vos biens : recherche de locataires, perception des loyers, entretien et suivi technique." },
   { icon: Handshake, title: "Mise en relation", desc: "Notre réseau connecte propriétaires sérieux et locataires fiables. Chaque profil est vérifié avec soin." },
   { icon: TrendingUp, title: "Commercialisation", desc: "Valorisez votre patrimoine grâce à nos stratégies de promotion : photos pro, annonces ciblées et accompagnement à la vente." },
 ];
 
 const reasons = [
-  { icon: Eye, title: "Expertise locale", desc: "Plus de 5 ans d'expérience sur le marché immobilier de Bouaké et ses environs." },
+  { icon: Eye, title: "Expertise locale", desc: "Plus de 5 ans d'expérience sur le marché immobilier de Bonoua et ses environs." },
   { icon: Users, title: "Suivi personnalisé", desc: "Un interlocuteur dédié vous accompagne de la première visite jusqu'à la remise des clés." },
   { icon: ShieldCheck, title: "Transparence totale", desc: "Des contrats clairs, des prix justes et aucun frais caché. Votre confiance est notre priorité." },
   { icon: Network, title: "Réseau étendu", desc: "Un large portefeuille de biens et un réseau de partenaires dans toute la région." },
@@ -36,8 +36,8 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="Agence Immobilière à Bouaké"
-        description="DIFA-CI & Business, votre agence immobilière de confiance à Bouaké. Location, vente, gestion locative de maisons, appartements et terrains en Côte d'Ivoire."
+        title="Agence Immobilière à Bonoua"
+        description="Eburnie Immobilier, votre agence immobilière de confiance à Bonoua. Location, vente, gestion locative de maisons, appartements et terrains en Côte d'Ivoire."
         canonical="/"
         keywords={`immobilier ${company.address.city}, location maison ${company.address.city}, agence immobilière ${company.address.country}, vente terrain ${company.address.city}`}
         jsonLd={{
@@ -67,7 +67,7 @@ const Index = () => {
       <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden">
         <motion.img
           src={heroBg}
-          alt="Immobilier à Bouaké"
+          alt="Immobilier à Bonoua"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ scale: heroScale }}
         />
@@ -230,7 +230,7 @@ const Index = () => {
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Ce que nous offrons</p>
             <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Nos Services</h2>
             <p className="mx-auto mt-5 max-w-2xl text-center text-muted-foreground leading-relaxed">
-              Des solutions immobilières complètes et professionnelles pour répondre à tous vos besoins à Bouaké et dans ses environs.
+              Des solutions immobilières complètes et professionnelles pour répondre à tous vos besoins à Bonoua et dans ses environs.
             </p>
           </AnimatedItem>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -268,7 +268,7 @@ const Index = () => {
             <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-secondary">Notre portefeuille</p>
             <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Biens récents</h2>
             <p className="mx-auto mt-5 max-w-2xl text-center text-muted-foreground leading-relaxed">
-              Découvrez nos dernières annonces immobilières soigneusement sélectionnées à Bouaké.
+              Découvrez nos dernières annonces immobilières soigneusement sélectionnées à Bonoua.
             </p>
           </AnimatedItem>
           {recent.length > 0 ? (
@@ -290,7 +290,7 @@ const Index = () => {
         </div>
       </AnimatedSection>
 
-      {/* Why DIFA-CI */}
+      {/* Why Eburnie Immobilier */}
       <AnimatedSection className="relative py-28 overflow-hidden bg-gradient-to-br from-muted/60 via-background to-accent/[0.04]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,hsl(var(--accent)/0.08),transparent_50%)]" />
         <div className="container relative">
