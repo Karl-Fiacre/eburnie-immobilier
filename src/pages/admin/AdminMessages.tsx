@@ -17,7 +17,7 @@ const AdminMessages = () => {
   const { data: messages, isLoading } = useQuery({
     queryKey: ["admin-messages"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("messages_immobilier").select("*, properties(title)").order("created_at", { ascending: false });
+      const { data, error } = await supabase.from("messages_immobilier").select("*, properties_immobilier(title)").order("created_at", { ascending: false });
       if (error) throw error;
       return data;
     },
