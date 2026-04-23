@@ -86,25 +86,41 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden border-t bg-background md:hidden"
           >
-            <div className="px-4 pb-4">
-              {links.map((l, i) => (
-                <motion.div
-                  key={l.to}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <Link
-                    to={l.to}
-                    onClick={() => setOpen(false)}
-                    className={`block py-3 text-sm font-medium ${
-                      location.pathname === l.to ? "text-secondary" : "text-foreground"
-                    }`}
+            <div className="px-4 pb-4 space-y-1">
+              {links.map((l, i) => {
+                const isActive = location.pathname === l.to;
+                const Icon = l.icon;
+                return (
+                  <motion.div
+                    key={l.to}
+                    initial={{ x: -30, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: i * 0.06, type: "spring", stiffness: 120, damping: 14 }}
                   >
-                    {l.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      to={l.to}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-colors ${
+                        isActive
+                          ? "bg-secondary/10 text-secondary"
+                          : "text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      <span className={`flex h-8 w-8 items-center justify-center rounded-lg ${isActive ? "bg-secondary/20 text-secondary" : "bg-muted text-muted-foreground"}`}>
+                        <Icon className="h-4 w-4" />
+                      </span>
+                      <span>{l.label}</span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="mobile-nav-indicator"
+                          className="ml-auto h-2 w-2 rounded-full bg-secondary"
+                          transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                        />
+                      )}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         )}
