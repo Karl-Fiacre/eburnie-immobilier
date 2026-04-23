@@ -38,24 +38,36 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`relative text-sm font-medium transition-colors hover:text-secondary ${
-                location.pathname === l.to ? "text-secondary" : "text-foreground"
-              }`}
-            >
-              {l.label}
-              {location.pathname === l.to && (
-                <motion.div
-                  layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"
-                />
-              )}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map((l) => {
+            const isActive = location.pathname === l.to;
+            const Icon = l.icon;
+            return (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`group relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all hover:bg-muted ${
+                  isActive ? "text-secondary" : "text-foreground"
+                }`}
+              >
+                <motion.span
+                  className="inline-flex"
+                  whileHover={{ scale: 1.15, rotate: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 12 }}
+                >
+                  <Icon className={`h-4 w-4 transition-colors ${isActive ? "text-secondary" : "text-muted-foreground group-hover:text-secondary"}`} />
+                </motion.span>
+                <span>{l.label}</span>
+                {isActive && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute inset-0 rounded-full border border-secondary/20 bg-secondary/10"
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile toggle */}
