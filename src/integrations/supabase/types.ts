@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_immobilier: {
+        Row: {
+          created_at: string
+          id: string
+          password_hash: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          password_hash: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          password_hash?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       messages_immobilier: {
         Row: {
           created_at: string
@@ -155,6 +176,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      verify_admin_password: { Args: { _password: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin"
