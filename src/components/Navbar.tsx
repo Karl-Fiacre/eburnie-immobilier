@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, Info, Building2, KeyRound, ClipboardList, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import type { LucideIcon } from "lucide-react";
 
-const links = [
-  { to: "/", label: "Accueil" },
-  { to: "/a-propos", label: "À propos" },
-  { to: "/biens", label: "Nos Biens" },
-  { to: "/confier-bien", label: "Confier mon bien" },
-  { to: "/devis", label: "Devis" },
-  { to: "/contact", label: "Contact" },
+interface NavLinkDef {
+  to: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+const links: NavLinkDef[] = [
+  { to: "/", label: "Accueil", icon: Home },
+  { to: "/a-propos", label: "À propos", icon: Info },
+  { to: "/biens", label: "Nos Biens", icon: Building2 },
+  { to: "/confier-bien", label: "Confier mon bien", icon: KeyRound },
+  { to: "/devis", label: "Devis", icon: ClipboardList },
+  { to: "/contact", label: "Contact", icon: Mail },
 ];
 
 const Navbar = () => {
