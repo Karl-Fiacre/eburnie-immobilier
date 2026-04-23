@@ -42,7 +42,7 @@ const PropertyDetail = () => {
       return;
     }
     setSending(true);
-    const { error } = await supabase.from("messages").insert({
+    const { error } = await supabase.from("messages_immobilier").insert({
       message_type: "visite" as const,
       nom: formData.nom.trim(),
       telephone: formData.telephone.trim(),

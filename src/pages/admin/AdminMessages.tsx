@@ -17,7 +17,7 @@ const AdminMessages = () => {
   const { data: messages, isLoading } = useQuery({
     queryKey: ["admin-messages"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("messages").select("*, properties(title)").order("created_at", { ascending: false });
+      const { data, error } = await supabase.from("messages_immobilier").select("*, properties(title)").order("created_at", { ascending: false });
       if (error) throw error;
       return data;
     },
@@ -25,7 +25,7 @@ const AdminMessages = () => {
 
   const markRead = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from("messages").update({ is_read: true }).eq("id", id);
+      const { error } = await supabase.from("messages_immobilier").update({ is_read: true }).eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ["admin-messages"] }),

@@ -15,7 +15,7 @@ const AdminLayout = () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) { navigate("/admin/login"); return; }
       const { data } = await supabase
-        .from("user_roles")
+        .from("user_roles_immobilier")
         .select("role")
         .eq("user_id", session.user.id)
         .eq("role", "admin")
