@@ -114,7 +114,32 @@ Rechercher et remplacer les liens vers Facebook, TikTok, Instagram dans :
 
 ---
 
-## 📋 Checklist de personnalisation
+## 📋 Checklist de contenu & SEO
+
+| Élément | Où | Valeur attendue | Fichier concerné |
+|---------|----|-----------------|------------------|
+| **Nom entreprise (SEO title)** | `<title>` | Eburnie Immobilier | `index.html` + `<SEOHead>` sur chaque page |
+| **Ville (SEO keywords)** | `keywords` | `immobilier Bonoua`, `agence immobilière Bonoua` | `index.html` + toutes les pages `<SEOHead>` |
+| **OG title** | `og:title` | Eburnie Immobilier | `index.html` + `<SEOHead>` sur chaque page |
+| **OG description** | `og:description` | Contient « Bonoua » et « Eburnie Immobilier » | `index.html` + `<SEOHead>` sur chaque page |
+| **OG image** | `og:image` | Image cohérente avec l'identité Eburnie | `index.html` |
+| **JSON-LD (Schema.org)** | `<script type="application/ld+json">` | `@context`: Eburnie Immobilier, address: Bonoua | Chaque page (`Index`, `Contact`, `APropos`, `NosBiens`) |
+| **Sitemap URL** | `<loc>` | `https://eburnie-immobilier.ci/*` | `public/sitemap.xml` |
+| **Robots sitemap** | `Sitemap:` | `https://eburnie-immobilier.ci/sitemap.xml` | `public/robots.txt` |
+| **Canonical** | `<link rel="canonical">` | `https://eburnie-immobilier.ci/<page>` | `index.html` + toutes les pages |
+| **Footer – nom** | Texte | Eburnie Immobilier | `src/components/Footer.tsx` |
+| **Footer – ville** | Adresse | Bonoua | `src/components/Footer.tsx` |
+| **Footer – coordonnées** | Téléphone / Email | Valeurs Eburnie Immobilier | `src/components/Footer.tsx` |
+| **CTA WhatsApp** | Bouton flottant | `company.whatsapp.url` (depuis `company.ts`) | `src/components/WhatsAppButton.tsx` |
+| **Composant WhatsApp** | Label aria / tooltip | « Contacter Eburnie Immobilier via WhatsApp » | `src/components/WhatsAppButton.tsx` |
+| **Navbar – nom** | Logo texte | Eburnie Immobilier | `src/components/Navbar.tsx` |
+| **Page Accueil – Hero** | H1 / sous-titre | Eburnie Immobilier + Bonoua | `src/pages/Index.tsx` |
+| **Page À propos – adresse** | Texte | Yaou, Carrefour Maison Blanche, Bonoua | `src/pages/APropos.tsx` |
+| **Page Contact – ville** | Coordonnées | Bonoua | `src/pages/Contact.tsx` |
+
+---
+
+## 📋 Checklist de personnalisation (originale)
 
 - [ ] Remplacer le logo (`src/assets/logo.png`)
 - [ ] Remplacer l'image hero (`src/assets/hero-bg.jpg`)
