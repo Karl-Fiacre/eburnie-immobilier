@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, Info, Building2, KeyRound, ClipboardList, Mail } from "lucide-react";
+import { Menu, X, Home, Info, Building2, KeyRound, ClipboardList, Mail, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -15,6 +15,7 @@ interface NavLinkDef {
 const links: NavLinkDef[] = [
   { to: "/", label: "Accueil", icon: Home },
   { to: "/a-propos", label: "À propos", icon: Info },
+  { to: "/construction-btp", label: "Construction & BTP", icon: HardHat },
   { to: "/biens", label: "Nos Biens", icon: Building2 },
   { to: "/confier-bien", label: "Confier mon bien", icon: KeyRound },
   { to: "/devis", label: "Devis", icon: ClipboardList },

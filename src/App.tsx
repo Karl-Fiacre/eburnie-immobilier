@@ -10,6 +10,7 @@ import NosBiens from "./pages/NosBiens";
 import PropertyDetail from "./pages/PropertyDetail";
 import ConfierBien from "./pages/ConfierBien";
 import APropos from "./pages/APropos";
+import ConstructionBTP from "./pages/ConstructionBTP";
 import Devis from "./pages/Devis";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/AdminLogin";
@@ -30,6 +31,7 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
+            <Route path="/construction-btp" element={<ConstructionBTP />} />
             <Route path="/biens" element={<NosBiens />} />
             <Route path="/biens/:id" element={<PropertyDetail />} />
             <Route path="/confier-bien" element={<ConfierBien />} />
