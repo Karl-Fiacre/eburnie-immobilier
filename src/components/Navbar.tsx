@@ -34,8 +34,23 @@ const Navbar = () => {
       className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Eburnie Immobilier" className="h-12 w-auto" />
+        <Link to="/" className="group flex items-center gap-3">
+          <motion.div
+            className="relative"
+            whileHover={{ scale: 1.05, rotate: -3 }}
+            transition={{ type: "spring", stiffness: 300, damping: 12 }}
+          >
+            <span className="absolute inset-0 -z-10 rounded-full bg-secondary/40 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
+            <img
+              src={logo}
+              alt="Eburnie Immobilier"
+              className="h-12 w-12 rounded-full object-cover ring-2 ring-secondary/50 ring-offset-2 ring-offset-background transition-all duration-500 group-hover:ring-secondary"
+            />
+          </motion.div>
+          <span className="hidden font-display text-lg font-bold leading-tight text-primary sm:flex sm:flex-col">
+            Eburnie
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-secondary">Immobilier</span>
+          </span>
         </Link>
 
         {/* Desktop */}
