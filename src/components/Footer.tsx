@@ -13,7 +13,14 @@ const Footer = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <img src={logo} alt={`${company.name} - Agence immobilière à ${company.address.city}`} className="mb-4 h-20 w-auto" />
+          <div className="relative mb-4 inline-block">
+            <span className="absolute inset-0 -z-10 rounded-full bg-secondary/30 blur-2xl" aria-hidden />
+            <img
+              src={logo}
+              alt={`${company.name} - Agence immobilière à ${company.address.city}`}
+              className="h-24 w-24 rounded-full object-cover ring-2 ring-secondary/60 ring-offset-2 ring-offset-primary shadow-[0_0_30px_hsl(var(--secondary)/0.4)]"
+            />
+          </div>
           <p className="text-sm opacity-80">
             {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
