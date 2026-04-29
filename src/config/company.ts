@@ -18,7 +18,9 @@ export const company = {
 
   // ── Coordonnées ───────────────────────────────────────────
   phones: [
-    { display: "+225 07 87 42 11 19", raw: "+2250787421119" },
+    { display: "+225 27 34 76 13 30", raw: "+2252734761330" },
+    { display: "+225 01 42 14 51 39", raw: "+2250142145139" },
+    { display: "+225 07 47 76 51 67", raw: "+2250747765167" },
   ],
   email: "contact@eburnie-immobilier.ci",
   hours: "Lun - Sam : 8h - 18h",
@@ -36,7 +38,7 @@ export const company = {
 
   // ── WhatsApp ──────────────────────────────────────────────
   whatsapp: {
-    number: "2250787421119",
+    number: "2250747765167",
     get url() {
       return `https://wa.me/${this.number}`;
     },
