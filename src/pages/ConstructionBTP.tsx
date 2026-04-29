@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
+import BTPQuoteForm from "@/components/BTPQuoteForm";
 import { company } from "@/config/company";
 
 import heroImg from "@/assets/btp-hero.jpg";
@@ -250,6 +251,13 @@ const ConstructionBTP = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </AnimatedSection>
+
+      {/* FORMULAIRE DEVIS */}
+      <AnimatedSection className="bg-muted/30 py-20">
+        <div className="container">
+          <BTPQuoteForm />
         </div>
       </AnimatedSection>
 
