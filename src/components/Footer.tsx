@@ -18,10 +18,10 @@ const Footer = () => (
             <img
               src={logo}
               alt={`${company.name} - Agence immobilière à ${company.address.city}`}
-              className="h-24 w-24 rounded-full object-cover ring-2 ring-secondary/60 ring-offset-2 ring-offset-primary shadow-[0_0_30px_hsl(var(--secondary)/0.4)]"
+              className="h-28 w-28 sm:h-24 sm:w-24 rounded-full object-cover ring-2 ring-secondary/60 ring-offset-2 ring-offset-primary shadow-[0_0_30px_hsl(var(--secondary)/0.4)]"
             />
           </div>
-          <p className="text-sm opacity-80">
+          <p className="text-sm text-primary-foreground/90">
             {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
         </motion.div>
