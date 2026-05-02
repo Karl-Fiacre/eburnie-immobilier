@@ -131,8 +131,8 @@ const Index = () => {
                 initial={{ opacity: 0, y: 60, rotateX: 45 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{ delay: 0.4, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="block text-gradient"
-                style={{ WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", backgroundImage: "linear-gradient(135deg, hsl(207 55% 60%), hsl(211 58% 65%), hsl(207 55% 75%))" }}
+                className="block"
+                style={{ WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", backgroundImage: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--secondary)))" }}
               >
                 immobilier de confiance
               </motion.span>
@@ -157,17 +157,17 @@ const Index = () => {
           </motion.p>
 
           <motion.div
-            className="mt-8 mb-28 flex flex-wrap justify-center gap-4"
+            className="mt-8 mb-28 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
           >
-            <Button size="lg" asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl shadow-secondary/25 px-8 text-base">
+            <Button size="lg" asChild className="w-full sm:w-auto h-12 sm:h-11 bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl shadow-secondary/25 px-8 text-base font-semibold">
               <Link to="/biens">
                 Voir les biens <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary/40 text-primary hover:bg-primary/10 backdrop-blur-md text-base">
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto h-12 sm:h-11 border-primary-foreground/60 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground backdrop-blur-md text-base font-semibold">
               <a href={company.whatsapp.url} target="_blank" rel="noopener noreferrer">Contacter via WhatsApp</a>
             </Button>
           </motion.div>
