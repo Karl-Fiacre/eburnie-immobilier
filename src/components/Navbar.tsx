@@ -71,7 +71,12 @@ const Navbar = () => {
                   whileHover={{ scale: 1.15, rotate: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 12 }}
                 >
-                  <Icon className={`h-4 w-4 transition-colors ${isActive ? "text-secondary" : "text-muted-foreground group-hover:text-secondary"}`} />
+                  <Icon
+                    strokeWidth={1.75}
+                    className={`h-4 w-4 transition-all duration-300 drop-shadow-[0_1px_2px_hsl(var(--secondary)/0.35)] ${
+                      isActive ? "text-secondary" : "text-primary/70 group-hover:text-secondary"
+                    }`}
+                  />
                 </motion.span>
                 <span>{l.label}</span>
                 {isActive && (
@@ -122,8 +127,14 @@ const Navbar = () => {
                           : "text-foreground hover:bg-muted"
                       }`}
                     >
-                      <span className={`flex h-8 w-8 items-center justify-center rounded-lg ${isActive ? "bg-secondary/20 text-secondary" : "bg-muted text-muted-foreground"}`}>
-                        <Icon className="h-4 w-4" />
+                      <span
+                        className={`flex h-8 w-8 items-center justify-center rounded-lg shadow-sm ring-1 transition-all ${
+                          isActive
+                            ? "bg-gradient-to-br from-secondary/30 to-accent/20 text-secondary ring-secondary/40"
+                            : "bg-gradient-to-br from-primary/10 to-secondary/10 text-primary/80 ring-secondary/20"
+                        }`}
+                      >
+                        <Icon strokeWidth={1.75} className="h-4 w-4" />
                       </span>
                       <span>{l.label}</span>
                       {isActive && (
