@@ -44,12 +44,12 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Eburnie Immobilier"
-              className="h-12 w-12 rounded-full object-cover ring-2 ring-secondary/50 ring-offset-2 ring-offset-background transition-all duration-500 group-hover:ring-secondary"
+              className="h-14 w-14 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-secondary/50 ring-offset-2 ring-offset-background transition-all duration-500 group-hover:ring-secondary"
             />
           </motion.div>
-          <span className="hidden font-display text-lg font-bold leading-tight text-primary sm:flex sm:flex-col">
+          <span className="flex font-display text-base sm:text-lg font-bold leading-tight text-primary flex-col">
             Eburnie
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-secondary">Immobilier</span>
+            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-[0.18em] sm:tracking-[0.2em] text-secondary">Immobilier</span>
           </span>
         </Link>
 

@@ -18,10 +18,10 @@ const Footer = () => (
             <img
               src={logo}
               alt={`${company.name} - Agence immobilière à ${company.address.city}`}
-              className="h-24 w-24 rounded-full object-cover ring-2 ring-secondary/60 ring-offset-2 ring-offset-primary shadow-[0_0_30px_hsl(var(--secondary)/0.4)]"
+              className="h-28 w-28 sm:h-24 sm:w-24 rounded-full object-cover ring-2 ring-secondary/60 ring-offset-2 ring-offset-primary shadow-[0_0_30px_hsl(var(--secondary)/0.4)]"
             />
           </div>
-          <p className="text-sm opacity-80">
+          <p className="text-sm text-primary-foreground/90">
             {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
         </motion.div>
@@ -32,14 +32,14 @@ const Footer = () => (
           transition={{ delay: 0.1 }}
         >
           <h4 className="mb-4 font-display text-lg font-bold">Navigation</h4>
-          <div className="flex flex-col gap-2 text-sm opacity-80">
-            <Link to="/" className="transition-opacity hover:opacity-100">Accueil</Link>
-            <Link to="/a-propos" className="transition-opacity hover:opacity-100">À propos</Link>
-            <Link to="/construction-btp" className="transition-opacity hover:opacity-100">Construction & BTP</Link>
-            <Link to="/biens" className="transition-opacity hover:opacity-100">Nos Biens</Link>
-            <Link to="/confier-bien" className="transition-opacity hover:opacity-100">Confier mon bien</Link>
-            <Link to="/devis" className="transition-opacity hover:opacity-100">Devis</Link>
-            <Link to="/contact" className="transition-opacity hover:opacity-100">Contact</Link>
+          <div className="flex flex-col gap-2 text-sm text-primary-foreground/85">
+            <Link to="/" className="transition-colors hover:text-secondary">Accueil</Link>
+            <Link to="/a-propos" className="transition-colors hover:text-secondary">À propos</Link>
+            <Link to="/construction-btp" className="transition-colors hover:text-secondary">Construction & BTP</Link>
+            <Link to="/biens" className="transition-colors hover:text-secondary">Nos Biens</Link>
+            <Link to="/confier-bien" className="transition-colors hover:text-secondary">Confier mon bien</Link>
+            <Link to="/devis" className="transition-colors hover:text-secondary">Devis</Link>
+            <Link to="/contact" className="transition-colors hover:text-secondary">Contact</Link>
           </div>
         </motion.div>
         <motion.div
@@ -49,7 +49,7 @@ const Footer = () => (
           transition={{ delay: 0.2 }}
         >
           <h4 className="mb-4 font-display text-lg font-bold">Services</h4>
-          <div className="flex flex-col gap-2 text-sm opacity-80">
+          <div className="flex flex-col gap-2 text-sm text-primary-foreground/85">
             <span>Location de biens</span>
             <span>Gestion immobilière</span>
             <span>Mise en relation</span>
@@ -63,12 +63,12 @@ const Footer = () => (
           transition={{ delay: 0.3 }}
         >
           <h4 className="mb-4 font-display text-lg font-bold">Contact</h4>
-          <div className="flex flex-col gap-3 text-sm opacity-80">
+          <div className="flex flex-col gap-3 text-sm text-primary-foreground/85">
             {company.phones.map((p) => (
-              <span key={p.raw} className="flex items-center gap-2"><Phone className="h-4 w-4" /> {p.display}</span>
+              <span key={p.raw} className="flex items-center gap-2"><Phone className="h-4 w-4 text-secondary" /> {p.display}</span>
             ))}
-            <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> {company.email}</span>
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {company.address.full}</span>
+            <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-secondary" /> {company.email}</span>
+            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-secondary" /> {company.address.full}</span>
           </div>
         </motion.div>
       </div>
