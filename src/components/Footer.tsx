@@ -7,7 +7,7 @@ import { company } from "@/config/company";
 const Footer = () => (
   <footer className="border-t bg-primary text-primary-foreground" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
     <div className="container py-12">
-      <div className="grid gap-8 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
