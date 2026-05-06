@@ -7,7 +7,7 @@ import { company } from "@/config/company";
 const Footer = () => (
   <footer className="border-t bg-primary text-primary-foreground" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
     <div className="container py-12">
-      <div className="grid gap-8 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,14 +25,15 @@ const Footer = () => (
             {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
         </motion.div>
+        <div className="grid grid-cols-3 gap-4 md:contents">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          <h4 className="mb-4 font-display text-lg font-bold">Navigation</h4>
-          <div className="flex flex-col gap-2 text-sm text-primary-foreground/85">
+          <h4 className="mb-3 font-display text-sm font-bold sm:text-lg md:mb-4">Navigation</h4>
+          <div className="flex flex-col gap-1.5 text-xs text-primary-foreground/85 sm:gap-2 sm:text-sm">
             <Link to="/" className="transition-colors hover:text-secondary">Accueil</Link>
             <Link to="/a-propos" className="transition-colors hover:text-secondary">À propos</Link>
             <Link to="/construction-btp" className="transition-colors hover:text-secondary">Construction & BTP</Link>
@@ -48,8 +49,8 @@ const Footer = () => (
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <h4 className="mb-4 font-display text-lg font-bold">Services</h4>
-          <div className="flex flex-col gap-2 text-sm text-primary-foreground/85">
+          <h4 className="mb-3 font-display text-sm font-bold sm:text-lg md:mb-4">Services</h4>
+          <div className="flex flex-col gap-1.5 text-xs text-primary-foreground/85 sm:gap-2 sm:text-sm">
             <span>Location de biens</span>
             <span>Gestion immobilière</span>
             <span>Mise en relation</span>
@@ -62,15 +63,16 @@ const Footer = () => (
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          <h4 className="mb-4 font-display text-lg font-bold">Contact</h4>
-          <div className="flex flex-col gap-3 text-sm text-primary-foreground/85">
+          <h4 className="mb-3 font-display text-sm font-bold sm:text-lg md:mb-4">Contact</h4>
+          <div className="flex flex-col gap-2 text-xs text-primary-foreground/85 sm:gap-3 sm:text-sm">
             {company.phones.map((p) => (
-              <span key={p.raw} className="flex items-center gap-2"><Phone className="h-4 w-4 text-secondary" /> {p.display}</span>
+              <span key={p.raw} className="flex items-start gap-1.5 break-all sm:items-center sm:gap-2"><Phone className="h-3.5 w-3.5 shrink-0 text-secondary sm:h-4 sm:w-4" /> {p.display}</span>
             ))}
-            <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-secondary" /> {company.email}</span>
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-secondary" /> {company.address.full}</span>
+            <span className="flex items-start gap-1.5 break-all sm:items-center sm:gap-2"><Mail className="h-3.5 w-3.5 shrink-0 text-secondary sm:h-4 sm:w-4" /> {company.email}</span>
+            <span className="flex items-start gap-1.5 sm:items-center sm:gap-2"><MapPin className="h-3.5 w-3.5 shrink-0 text-secondary sm:h-4 sm:w-4" /> {company.address.full}</span>
           </div>
         </motion.div>
+        </div>
       </div>
       <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-center text-xs opacity-60">
         © {new Date().getFullYear()} {company.name}. Tous droits réservés.
