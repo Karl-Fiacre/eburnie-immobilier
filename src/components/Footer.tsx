@@ -25,6 +25,7 @@ const Footer = () => (
             {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
         </motion.div>
+        <div className="grid grid-cols-3 gap-4 md:contents">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,6 +72,7 @@ const Footer = () => (
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-secondary" /> {company.address.full}</span>
           </div>
         </motion.div>
+        </div>
       </div>
       <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-center text-xs opacity-60">
         © {new Date().getFullYear()} {company.name}. Tous droits réservés.
