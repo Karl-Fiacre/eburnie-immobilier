@@ -25,7 +25,7 @@ const Footer = () => (
             {company.slogan}. Location, gestion et commercialisation de biens immobiliers.
           </p>
         </motion.div>
-        <div className="grid grid-cols-3 gap-4 md:contents">
+        <div className="grid grid-cols-2 gap-4 md:contents [&>*:last-child]:col-span-2 md:[&>*:last-child]:col-span-1">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
