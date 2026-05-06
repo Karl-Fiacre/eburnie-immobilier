@@ -247,7 +247,7 @@ const PropertyDetail = () => {
                     <Input placeholder="Téléphone *" value={formData.telephone} onChange={(e) => setFormData({ ...formData, telephone: e.target.value })} required />
                     <Input type="email" placeholder="Email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                     <Textarea placeholder="Message (optionnel)" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
-                    <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" disabled={sending}>
+                    <Button type="submit" className="w-full cta-premium" disabled={sending}>
                       {sending ? "Envoi..." : <><Send className="mr-2 h-4 w-4" /> Envoyer la demande</>}
                     </Button>
                   </form>

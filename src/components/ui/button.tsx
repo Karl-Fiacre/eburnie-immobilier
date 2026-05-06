@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default: "bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-secondary/40 hover:-translate-y-0.5 transition-all",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-secondary/40 bg-background/60 backdrop-blur hover:bg-gradient-to-br hover:from-secondary/15 hover:to-accent/10 hover:border-secondary hover:text-secondary transition-all",
-        secondary: "bg-gradient-to-br from-secondary via-accent to-secondary text-secondary-foreground shadow-md shadow-secondary/30 hover:shadow-xl hover:shadow-accent/40 hover:-translate-y-0.5 transition-all",
+        secondary: "cta-premium font-semibold",
         ghost: "hover:bg-accent/20 hover:text-secondary",
         link: "text-secondary underline-offset-4 hover:underline",
       },

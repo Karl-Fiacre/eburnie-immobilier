@@ -137,7 +137,7 @@ const Contact = () => {
               </div>
               <AnimatedItem className="mt-8">
                 <div className="flex gap-3">
-                  <Button asChild className="bg-secondary hover:bg-secondary/90">
+                  <Button asChild className="cta-premium">
                     <a href={company.whatsapp.url} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
                     </a>
@@ -170,7 +170,7 @@ const Contact = () => {
                       </div>
                       <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
                       <Textarea placeholder="Votre message..." rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-                      <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" disabled={sending}>
+                      <Button type="submit" className="w-full cta-premium" disabled={sending}>
                         {sending ? "Envoi..." : <><Send className="mr-2 h-4 w-4" /> Envoyer le message</>}
                       </Button>
                     </form>

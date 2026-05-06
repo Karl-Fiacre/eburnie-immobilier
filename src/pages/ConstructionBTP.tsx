@@ -134,7 +134,7 @@ const ConstructionBTP = () => {
               et rénovation à {company.address.city} et dans toute la Côte d'Ivoire.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
+              <Button asChild size="lg" className="cta-premium">
                 <Link to="/devis">
                   Demander un devis <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -280,7 +280,7 @@ const ConstructionBTP = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
+            <Button asChild size="lg" className="cta-premium">
               <Link to="/devis">Demander un devis</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20">

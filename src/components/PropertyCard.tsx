@@ -50,7 +50,7 @@ const PropertyCard = ({ id, title, property_type, listing_type, price, quartier,
         </p>
         <div className="mt-4 flex items-center justify-between">
           <p className="text-lg font-bold text-secondary">{price.toLocaleString("fr-FR")} FCFA{listing_type === "location" ? "/mois" : ""}</p>
-          <Button size="sm" asChild className="bg-secondary hover:bg-secondary/90 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-secondary/40 group-hover:translate-x-1">
+          <Button size="sm" asChild className="cta-premium transition-all duration-300 group-hover:shadow-lg group-hover:shadow-secondary/40 group-hover:translate-x-1">
             <Link to={`/biens/${id}`}>Détails</Link>
           </Button>
         </div>
