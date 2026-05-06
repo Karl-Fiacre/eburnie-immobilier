@@ -139,7 +139,7 @@ const ConfierBien = () => {
                   </Select>
                   <Input placeholder="Localisation du bien" value={form.localisation} onChange={(e) => setForm({ ...form, localisation: e.target.value })} />
                   <Textarea placeholder="Décrivez votre bien (surface, état, nombre de pièces...)" rows={5} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
-                  <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" disabled={sending}>
+                  <Button type="submit" className="w-full cta-premium" disabled={sending}>
                     {sending ? "Envoi..." : <><Send className="mr-2 h-4 w-4" /> Envoyer ma demande</>}
                   </Button>
                 </form>

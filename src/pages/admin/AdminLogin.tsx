@@ -77,7 +77,7 @@ const AdminLogin = () => {
 
             <Button
               type="submit"
-              className="h-12 w-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              className="h-12 w-full cta-premium"
               disabled={loading}
             >
               {loading ? "Vérification..." : "Accéder au back-office"}

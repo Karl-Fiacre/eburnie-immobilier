@@ -162,7 +162,7 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
           >
-            <Button size="lg" asChild className="w-full sm:w-auto h-12 sm:h-11 bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl shadow-secondary/25 px-8 text-base font-semibold">
+            <Button size="lg" asChild className="w-full sm:w-auto h-12 sm:h-11 cta-premium px-8 text-base font-semibold">
               <Link to="/biens">
                 Voir les biens <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -283,7 +283,7 @@ const Index = () => {
             </AnimatedItem>
           )}
           <AnimatedItem className="mt-14 text-center">
-            <Button size="lg" asChild className="bg-secondary hover:bg-secondary/90 px-10 shadow-xl shadow-secondary/20 text-base">
+            <Button size="lg" asChild className="cta-premium px-10 shadow-xl shadow-secondary/20 text-base">
               <Link to="/biens">Voir toutes les annonces <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </AnimatedItem>

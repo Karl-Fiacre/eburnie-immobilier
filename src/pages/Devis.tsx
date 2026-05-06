@@ -279,7 +279,7 @@ const Devis = () => {
                     value={form.description}
                     onChange={(e) => setForm({ ...form, description: e.target.value })}
                   />
-                  <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 text-base h-12" disabled={sending}>
+                  <Button type="submit" className="w-full cta-premium text-base h-12" disabled={sending}>
                     {sending ? "Envoi en cours..." : <><Send className="mr-2 h-4 w-4" /> Demander mon devis gratuit</>}
                   </Button>
                 </form>
