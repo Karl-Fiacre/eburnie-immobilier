@@ -13,6 +13,9 @@ import APropos from "./pages/APropos";
 import ConstructionBTP from "./pages/ConstructionBTP";
 import Devis from "./pages/Devis";
 import Contact from "./pages/Contact";
+import MentionsLegales from "./pages/MentionsLegales";
+import CGU from "./pages/CGU";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminProperties from "./pages/admin/AdminProperties";
@@ -38,6 +41,9 @@ const App = () => (
             <Route path="/a-propos" element={<APropos />} />
             <Route path="/devis" element={<Devis />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/cgu" element={<CGU />} />
+            <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
           </Route>
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
