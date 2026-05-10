@@ -74,8 +74,17 @@ const Footer = () => (
         </motion.div>
         </div>
       </div>
-      <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} {company.name}. Tous droits réservés.
+      <div className="mt-8 border-t border-primary-foreground/20 pt-6">
+        <div className="flex flex-col items-center gap-3 text-center text-xs text-primary-foreground/80 sm:flex-row sm:justify-between">
+          <p className="opacity-70">© {new Date().getFullYear()} {company.name}. Tous droits réservés.</p>
+          <nav aria-label="Liens légaux" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5">
+            <Link to="/mentions-legales" className="transition-colors hover:text-secondary">Mentions légales</Link>
+            <span className="opacity-40" aria-hidden>·</span>
+            <Link to="/cgu" className="transition-colors hover:text-secondary">CGU</Link>
+            <span className="opacity-40" aria-hidden>·</span>
+            <Link to="/politique-confidentialite" className="transition-colors hover:text-secondary">Politique de confidentialité</Link>
+          </nav>
+        </div>
       </div>
     </div>
   </footer>
