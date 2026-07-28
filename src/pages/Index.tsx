@@ -321,7 +321,9 @@ const Index = () => {
         </div>
       </AnimatedSection>
 
-      {/* Testimonials */}
+      {/* Testimonials — masqué tant qu'il n'y a pas de vrais témoignages clients.
+          Passer SHOW_TESTIMONIALS à true pour réafficher. */}
+      {SHOW_TESTIMONIALS && (
       <AnimatedSection className="relative py-32 overflow-hidden">
         {/* Rich layered background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-secondary/90" />
