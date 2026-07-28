@@ -78,7 +78,7 @@ export const company = {
   // ── SEO ───────────────────────────────────────────────────
   seo: {
     baseUrl: "https://eburnie-immobilier.ci",
-    defaultKeywords: "immobilier Bonoua, agence immobilière Côte d'Ivoire, Eburnie Immobilier, Eburnie Corporation, location maison Bonoua, vente terrain Bonoua",
+    defaultKeywords: "immobilier Bonoua, immobilier Grand Abidjan, agence immobilière Abidjan, agence immobilière Côte d'Ivoire, Eburnie Immobilier, Eburnie Corporation, location maison Bonoua, location appartement Abidjan, vente terrain Bonoua, vente terrain Abidjan",
     locale: "fr_CI",
   },
 

@@ -181,7 +181,7 @@ const BTPQuoteForm = () => {
             id="quartier"
             value={values.quartier}
             onChange={(e) => update("quartier", e.target.value)}
-            placeholder="Yaou, Bonoua"
+            placeholder="Yaou (Bonoua), Cocody, Bingerville…"
             maxLength={80}
             aria-invalid={!!errors.quartier}
           />
