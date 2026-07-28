@@ -10,11 +10,12 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import { Home, ShieldCheck, TrendingUp, Users, Send } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { company } from "@/config/company";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const advantages = [
   { icon: ShieldCheck, title: "Gestion sécurisée", desc: "Vos biens sont entre de bonnes mains. Nous gérons tout avec rigueur et professionnalisme." },
-  { icon: TrendingUp, title: "Rendement optimisé", desc: "Maximisez vos revenus locatifs grâce à notre connaissance du marché de Bonoua." },
+  { icon: TrendingUp, title: "Rendement optimisé", desc: "Maximisez vos revenus locatifs grâce à notre connaissance du marché de Bonoua et du Grand Abidjan." },
   { icon: Users, title: "Locataires vérifiés", desc: "Nous sélectionnons des locataires fiables et solvables pour votre tranquillité." },
   { icon: Home, title: "Suivi technique", desc: "Entretien, réparations et état des lieux réguliers pour préserver votre patrimoine." },
 ];
@@ -52,20 +53,20 @@ const ConfierBien = () => {
     <>
       <SEOHead
         title="Confier mon bien"
-        description="Confiez la gestion de votre bien immobilier à Eburnie Immobilier à Bonoua. Gestion locative, recherche de locataires et suivi technique professionnels."
+        description="Confiez la gestion de votre bien immobilier à Eburnie Immobilier, à Bonoua et dans tout le Grand Abidjan. Gestion locative, recherche de locataires et suivi technique professionnels."
         canonical="/confier-bien"
-        keywords="gestion locative Bonoua, confier bien immobilier, gérer propriété Côte d'Ivoire, rendement locatif Bonoua"
+        keywords="gestion locative Bonoua, gestion locative Abidjan, confier bien immobilier Grand Abidjan, gérer propriété Côte d'Ivoire, rendement locatif Bonoua"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Gestion locative à Bonoua",
+          "name": "Gestion locative à Bonoua et dans le Grand Abidjan",
           "description": "Confiez la gestion de votre bien immobilier à Eburnie Immobilier. Recherche de locataires, suivi technique et rendement optimisé.",
           "provider": {
             "@type": "RealEstateAgent",
             "name": "Eburnie Immobilier",
             "address": { "@type": "PostalAddress", "addressLocality": "Bonoua", "addressCountry": "CI" }
           },
-          "areaServed": { "@type": "City", "name": "Bonoua" },
+          "areaServed": company.serviceArea.cities.map((c) => ({ "@type": "City", "name": c })),
           "serviceType": ["Gestion locative", "Recherche de locataires", "Suivi technique", "Commercialisation"]
         }}
       />
@@ -86,7 +87,7 @@ const ConfierBien = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Propriétaire à Bonoua ? Laissez-nous gérer, louer ou vendre votre bien en toute sérénité. Notre expertise locale est votre meilleur atout.
+            Propriétaire à Bonoua ou dans le Grand Abidjan ? Laissez-nous gérer, louer ou vendre votre bien en toute sérénité. Notre expertise locale est votre meilleur atout.
           </motion.p>
         </div>
       </section>

@@ -70,6 +70,7 @@ const Footer = () => (
             ))}
             <span className="flex items-start gap-1.5 break-all sm:items-center sm:gap-2"><Mail className="h-3.5 w-3.5 shrink-0 text-secondary sm:h-4 sm:w-4" /> {company.email}</span>
             <span className="flex items-start gap-1.5 sm:items-center sm:gap-2"><MapPin className="h-3.5 w-3.5 shrink-0 text-secondary sm:h-4 sm:w-4" /> {company.address.full}</span>
+            <span className="text-[11px] text-primary-foreground/70 sm:text-xs">Zone d'intervention : {company.serviceArea.label}</span>
           </div>
         </motion.div>
         </div>

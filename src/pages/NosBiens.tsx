@@ -28,15 +28,15 @@ const NosBiens = () => {
   return (
     <>
       <SEOHead
-        title="Nos Biens Immobiliers à Bonoua"
-        description="Explorez notre catalogue de maisons, appartements, terrains et bureaux à louer ou à vendre à Bonoua. Biens sélectionnés avec soin par Eburnie Immobilier."
+        title="Nos Biens Immobiliers à Bonoua & Grand Abidjan"
+        description="Explorez notre catalogue de maisons, appartements, terrains et bureaux à louer ou à vendre à Bonoua et dans le Grand Abidjan. Biens sélectionnés avec soin par Eburnie Immobilier."
         canonical="/biens"
-        keywords="location maison Bonoua, appartement à louer Bonoua, terrain à vendre Bonoua, bureau Bonoua, immobilier Côte d'Ivoire"
+        keywords="location maison Bonoua, appartement à louer Abidjan, terrain à vendre Bonoua, terrain à vendre Abidjan, bureau Grand Abidjan, immobilier Côte d'Ivoire"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Biens immobiliers à Bonoua",
-          "description": "Catalogue de biens immobiliers disponibles à la location et à la vente à Bonoua.",
+          "name": "Biens immobiliers à Bonoua et dans le Grand Abidjan",
+          "description": "Catalogue de biens immobiliers disponibles à la location et à la vente à Bonoua et dans le Grand Abidjan.",
           "provider": { "@type": "RealEstateAgent", "name": "Eburnie Immobilier" }
         }}
       />
@@ -63,7 +63,7 @@ const NosBiens = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Explorez notre catalogue de biens soigneusement sélectionnés à Bonoua
+            Explorez notre catalogue de biens soigneusement sélectionnés à Bonoua et dans le Grand Abidjan
           </motion.p>
         </div>
       </section>

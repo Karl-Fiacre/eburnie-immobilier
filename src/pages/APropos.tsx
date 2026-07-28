@@ -6,7 +6,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { company } from "@/config/company";
 
 const values = [
-  { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bonoua en offrant des services d'excellence accessibles à tous les budgets." },
+  { icon: Eye, title: "Vision", desc: "Devenir la référence immobilière de Bonoua et du Grand Abidjan en offrant des services d'excellence accessibles à tous les budgets." },
   { icon: ShieldCheck, title: "Intégrité", desc: "Nous plaçons l'honnêteté et la transparence au cœur de chaque transaction. Aucun frais caché, aucune surprise." },
   { icon: Users, title: "Proximité", desc: "Un accompagnement humain et personnalisé pour chaque client, du premier contact à la remise des clés." },
   { icon: Award, title: "Excellence", desc: "Des standards élevés dans la sélection et la gestion des biens pour garantir votre entière satisfaction." },
@@ -61,7 +61,7 @@ const APropos = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Une agence immobilière enracinée à Bonoua, au service de votre réussite
+          Une agence enracinée à Bonoua, au service de votre réussite dans tout le Grand Abidjan
         </motion.p>
       </div>
     </section>
@@ -111,7 +111,7 @@ const APropos = () => (
           <Lightbulb className="mx-auto h-10 w-10 text-accent mb-4" />
           <h2 className="font-display text-3xl font-bold">Notre mission</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed opacity-85">
-            Faciliter l'accès à des biens immobiliers de qualité à Bonoua, en offrant un service 
+            Faciliter l'accès à des biens immobiliers de qualité à Bonoua et dans le Grand Abidjan, en offrant un service 
             professionnel, transparent et personnalisé. Nous croyons que chaque personne mérite un 
             logement adapté à ses besoins et à son budget.
           </p>

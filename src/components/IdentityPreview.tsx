@@ -61,6 +61,9 @@ const IdentityPreview = () => {
                   {company.address.city}, {company.address.country}
                 </span>
               </Row>
+              <Row icon={<MapPin className="h-4 w-4" />} label="Zone d'intervention">
+                {company.serviceArea.label}
+              </Row>
               <Row icon={<Phone className="h-4 w-4" />} label="Téléphone">
                 {company.phones.map((p) => p.display).join(" · ")}
               </Row>

@@ -11,10 +11,35 @@ export const company = {
   name: "Eburnie Immobilier",
   shortName: "Eburnie Immobilier",
   parentCompany: "Eburnie Corporation",
-  slogan: "Votre partenaire immobilier de confiance à Bonoua",
+  slogan: "Votre partenaire immobilier de confiance à Bonoua et dans le Grand Abidjan",
   description:
-    "Eburnie Immobilier, section d'activité d'Eburnie Corporation, agence immobilière de confiance à Bonoua spécialisée dans la location, vente et gestion de biens immobiliers.",
+    "Eburnie Immobilier, section d'activité d'Eburnie Corporation, agence immobilière de confiance basée à Bonoua et intervenant dans tout le Grand Abidjan : location, vente, gestion et construction de biens immobiliers.",
   foundingYear: "2019",
+
+  // ── Zone d'intervention ───────────────────────────────────
+  serviceArea: {
+    label: "Bonoua et tout le Grand Abidjan",
+    short: "Bonoua & Grand Abidjan",
+    cities: [
+      "Bonoua",
+      "Abidjan",
+      "Grand-Bassam",
+      "Bingerville",
+      "Cocody",
+      "Marcory",
+      "Port-Bouët",
+      "Yopougon",
+      "Abobo",
+      "Anyama",
+      "Songon",
+      "Koumassi",
+      "Treichville",
+      "Adjamé",
+      "Plateau",
+      "Attécoubé",
+    ],
+  },
+
 
   // ── Coordonnées ───────────────────────────────────────────
   phones: [
@@ -53,7 +78,7 @@ export const company = {
   // ── SEO ───────────────────────────────────────────────────
   seo: {
     baseUrl: "https://eburnie-immobilier.ci",
-    defaultKeywords: "immobilier Bonoua, agence immobilière Côte d'Ivoire, Eburnie Immobilier, Eburnie Corporation, location maison Bonoua, vente terrain Bonoua",
+    defaultKeywords: "immobilier Bonoua, immobilier Grand Abidjan, agence immobilière Abidjan, agence immobilière Côte d'Ivoire, Eburnie Immobilier, Eburnie Corporation, location maison Bonoua, location appartement Abidjan, vente terrain Bonoua, vente terrain Abidjan",
     locale: "fr_CI",
   },
 

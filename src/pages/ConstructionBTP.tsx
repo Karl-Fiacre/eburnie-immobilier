@@ -73,9 +73,9 @@ const ConstructionBTP = () => {
     <>
       <SEOHead
         title="Construction & BTP — Maçonnerie, Menuiserie, Carrelage"
-        description="Eburnie Immobilier — services Construction & BTP à Bonoua : maçonnerie, menuiserie, carrelage, peinture et ferronnerie. Devis et galerie de projets réalisés."
+        description="Eburnie Immobilier — services Construction & BTP à Bonoua et dans tout le Grand Abidjan : maçonnerie, menuiserie, carrelage, peinture et ferronnerie. Devis et galerie de projets réalisés."
         canonical="/construction-btp"
-        keywords="construction Bonoua, BTP Côte d'Ivoire, maçonnerie Bonoua, menuiserie Bonoua, carrelage, peinture, ferronnerie, Eburnie Immobilier"
+        keywords="construction Bonoua, construction Abidjan, BTP Grand Abidjan, BTP Côte d'Ivoire, maçonnerie Bonoua, menuiserie Bonoua, carrelage, peinture, ferronnerie, Eburnie Immobilier"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -91,7 +91,7 @@ const ConstructionBTP = () => {
               "addressCountry": company.address.countryCode,
             },
           },
-          "areaServed": company.address.city,
+          "areaServed": company.serviceArea.cities.map((c) => ({ "@type": "City", "name": c })),
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Services BTP",
