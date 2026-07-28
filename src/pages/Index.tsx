@@ -437,6 +437,8 @@ const Index = () => {
           </div>
         </div>
       </AnimatedSection>
+      )}
+
 
       {/* CTA */}
       <AnimatedSection className="relative py-28 overflow-hidden bg-gradient-to-t from-muted/50 via-background to-secondary/[0.04]">
