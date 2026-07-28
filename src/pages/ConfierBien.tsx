@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedItem } from "@/components/AnimatedSection";
 import { Home, ShieldCheck, TrendingUp, Users, Send } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { company } from "@/config/company";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const advantages = [
