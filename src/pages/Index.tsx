@@ -10,6 +10,9 @@ import heroBg from "@/assets/hero-bg.jpg";
 import SEOHead from "@/components/SEOHead";
 import { company } from "@/config/company";
 
+// Masquer la section témoignages tant qu'aucun témoignage client réel n'est disponible.
+const SHOW_TESTIMONIALS = false;
+
 const services = [
   { icon: Home, title: "Location", desc: "Trouvez la maison ou l'appartement idéal à Bonoua comme dans les quartiers prisés du Grand Abidjan. Nous sélectionnons pour vous des biens de qualité." },
   { icon: ClipboardList, title: "Gestion locative", desc: "Confiez-nous la gestion complète de vos biens : recherche de locataires, perception des loyers, entretien et suivi technique." },
