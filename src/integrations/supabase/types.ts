@@ -157,6 +157,39 @@ export type Database = {
         }
         Relationships: []
       }
+      zones_immobilier: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean
+          name: string
+          sort_order: number
+          updated_at: string
+          zone_group: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          sort_order?: number
+          updated_at?: string
+          zone_group?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          sort_order?: number
+          updated_at?: string
+          zone_group?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
