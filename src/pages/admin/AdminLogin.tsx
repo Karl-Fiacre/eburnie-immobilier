@@ -31,6 +31,7 @@ const AdminLogin = () => {
 
     sessionStorage.setItem("admin_authenticated", "true");
     sessionStorage.setItem("admin_authenticated_at", Date.now().toString());
+    sessionStorage.setItem("admin_password", password);
     toast({ title: "Bienvenue dans l'espace administrateur" });
     navigate("/admin");
   };

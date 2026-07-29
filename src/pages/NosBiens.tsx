@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
@@ -11,9 +12,10 @@ import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const NosBiens = () => {
+  const [searchParams] = useSearchParams();
   const [listingType, setListingType] = useState<string>("");
   const [propertyType, setPropertyType] = useState<string>("");
-  const [quartier, setQuartier] = useState("");
+  const [quartier, setQuartier] = useState(searchParams.get("quartier") ?? "");
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
 

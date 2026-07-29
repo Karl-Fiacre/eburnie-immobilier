@@ -13,6 +13,7 @@ import APropos from "./pages/APropos";
 import ConstructionBTP from "./pages/ConstructionBTP";
 import Devis from "./pages/Devis";
 import Contact from "./pages/Contact";
+import ZonesDesservies from "./pages/ZonesDesservies";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGU from "./pages/CGU";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
@@ -20,6 +21,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminProperties from "./pages/admin/AdminProperties";
 import AdminMessages from "./pages/admin/AdminMessages";
+import AdminZones from "./pages/admin/AdminZones";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +43,7 @@ const App = () => (
             <Route path="/a-propos" element={<APropos />} />
             <Route path="/devis" element={<Devis />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/zones-desservies" element={<ZonesDesservies />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/cgu" element={<CGU />} />
             <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
@@ -49,6 +52,7 @@ const App = () => (
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminProperties />} />
             <Route path="messages" element={<AdminMessages />} />
+            <Route path="zones" element={<AdminZones />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
