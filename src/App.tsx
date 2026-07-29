@@ -13,6 +13,7 @@ import APropos from "./pages/APropos";
 import ConstructionBTP from "./pages/ConstructionBTP";
 import Devis from "./pages/Devis";
 import Contact from "./pages/Contact";
+import ZonesDesservies from "./pages/ZonesDesservies";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGU from "./pages/CGU";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
@@ -20,6 +21,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminProperties from "./pages/admin/AdminProperties";
 import AdminMessages from "./pages/admin/AdminMessages";
+import AdminZones from "./pages/admin/AdminZones";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
