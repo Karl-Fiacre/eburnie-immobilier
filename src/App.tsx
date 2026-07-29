@@ -43,6 +43,7 @@ const App = () => (
             <Route path="/a-propos" element={<APropos />} />
             <Route path="/devis" element={<Devis />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/zones-desservies" element={<ZonesDesservies />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/cgu" element={<CGU />} />
             <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminProperties />} />
             <Route path="messages" element={<AdminMessages />} />
+            <Route path="zones" element={<AdminZones />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
