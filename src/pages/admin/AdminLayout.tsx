@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, Link, useLocation } from "react-router-dom";
-import { Building, MessageSquare, LogOut, Home } from "lucide-react";
+import { Building, MessageSquare, LogOut, Home, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const AdminLayout = () => {
@@ -20,6 +20,7 @@ const AdminLayout = () => {
   const handleLogout = () => {
     sessionStorage.removeItem("admin_authenticated");
     sessionStorage.removeItem("admin_authenticated_at");
+    sessionStorage.removeItem("admin_password");
     navigate("/admin/login");
   };
 
@@ -29,6 +30,7 @@ const AdminLayout = () => {
   const navItems = [
     { to: "/admin", icon: Building, label: "Biens", exact: true },
     { to: "/admin/messages", icon: MessageSquare, label: "Messages" },
+    { to: "/admin/zones", icon: MapPin, label: "Zones desservies" },
   ];
 
   return (

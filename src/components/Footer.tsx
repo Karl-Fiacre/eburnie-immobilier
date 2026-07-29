@@ -38,6 +38,7 @@ const Footer = () => (
             <Link to="/a-propos" className="transition-colors hover:text-secondary">À propos</Link>
             <Link to="/construction-btp" className="transition-colors hover:text-secondary">Construction & BTP</Link>
             <Link to="/biens" className="transition-colors hover:text-secondary">Nos Biens</Link>
+            <Link to="/zones-desservies" className="transition-colors hover:text-secondary">Zones desservies</Link>
             <Link to="/confier-bien" className="transition-colors hover:text-secondary">Confier mon bien</Link>
             <Link to="/devis" className="transition-colors hover:text-secondary">Devis</Link>
             <Link to="/contact" className="transition-colors hover:text-secondary">Contact</Link>
